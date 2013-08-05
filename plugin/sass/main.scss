@@ -1,0 +1,54 @@
+$font-color: #2C3E50;
+
+html, body {
+  margin: 0;
+  padding: 0;
+
+  width: 421px;
+
+  color: $font-color;
+}
+
+.dialog {
+  padding: .5em;
+  margin: .3em;
+
+  background: #FA4248;
+
+  font-family: Arial, sans-serif;
+  text-align: center;
+  font-size: 1.2em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+
+  display: none;
+}
+
+.currentListing {
+
+
+
+  img {
+    width: 400px;
+    background: #D7DADB;
+    margin: 10px;
+  }
+}
+
+.button {
+  display: inline-block;
+
+  margin: .5em 0 .5em .5em;
+  padding: .5em;
+
+  background: #D7DADB;
+
+  font-family: Arial;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  color: $font-color;
+
+  border-radius: 5px;
+}
+

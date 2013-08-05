@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+
+    "name": "ChromePlugin",
+    "description": "This extension demonstrates a browser action with kittens.",
+    "version": "1.0",
+
+    "permissions": [
+        "https://secure.flickr.com/",
+        "http://www.rightmove.co.uk/",
+        "https://www.rightmove.co.uk/",
+        "http://localhost/"
+    ],
+    "browser_action": {
+        "default_icon": "static/icon.png",
+        "default_popup": "popup.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["http://www.rightmove.co.uk/*"],
+            "css": ["static/css/rightmove.css"],
+            "js": ["static/js/jquery.js", "static/js/rightmove.js"]
+        }
+    ],
+
+    "background": {
+        "scripts": ["static/js/jquery.js", "static/js/background.js"],
+        "persistent": true
+    }
+
+}
