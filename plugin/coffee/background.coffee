@@ -6,6 +6,7 @@ FLAG_CURRENT_LISTING = 2
 SEARCH_URLS = 3
 
 API_URL = "http://localhost:3000"
+#API_URL = "http://chromeplugin.herokuapp.com"
 
 flagCurrentListing = ->
 

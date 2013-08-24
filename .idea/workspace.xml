@@ -11,7 +11,7 @@
     <file path="/main.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375644736393" ignored="false" />
     <file path="/rightmove.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375645305144" ignored="false" />
     <file path="/rightmove.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375656267498" ignored="false" />
-    <file path="/background.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375655919728" ignored="false" />
+    <file path="/background.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375814303568" ignored="false" />
     <file path="/popup.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375652629970" ignored="false" />
     <file path="/manifest.json" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375647814856" ignored="false" />
     <file path="/listing.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375651129172" ignored="false" />
@@ -38,10 +38,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="background.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="background.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plugin/coffee/background.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="26" selection-start="999" selection-end="999" vertical-scroll-proportion="0.0">
+            <state line="8" column="1" selection-start="151" selection-end="151" vertical-scroll-proportion="0.28985506">
               <folding />
             </state>
           </provider>
@@ -65,22 +65,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mongoid.yml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mongoid.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/mongoid.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="27" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.85037404">
+            <state line="87" column="27" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="popup.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plugin/popup.html">
+      <file leaf-file-name="manifest.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="39" selection-start="334" selection-end="334" vertical-scroll-proportion="-8.125">
-              <folding>
-                <element signature="n#style#0;n#a#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="12" column="9" selection-start="341" selection-end="375" vertical-scroll-proportion="-7.5">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,7 +141,6 @@
         <option value="$PROJECT_DIR$/plugin/coffee/main.coffee" />
         <option value="$PROJECT_DIR$/plugin/static/js/rightmove.js" />
         <option value="$PROJECT_DIR$/plugin/static/js/background.js" />
-        <option value="$PROJECT_DIR$/plugin/manifest.json" />
         <option value="$PROJECT_DIR$/app/views/listings/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/listings/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/listing.rb" />
@@ -152,10 +149,11 @@
         <option value="$PROJECT_DIR$/app/views/listings/index.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/plugin/coffee/popup.coffee" />
-        <option value="$PROJECT_DIR$/plugin/coffee/background.coffee" />
         <option value="$PROJECT_DIR$/plugin/coffee/rightmove.coffee" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/mongoid.yml" />
+        <option value="$PROJECT_DIR$/plugin/manifest.json" />
+        <option value="$PROJECT_DIR$/plugin/coffee/background.coffee" />
       </list>
     </option>
   </component>
@@ -708,7 +706,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31126598" sideWeight="0.66941017" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33058986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33058986" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -800,13 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="20" selection-start="801" selection-end="801" vertical-scroll-proportion="-19.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/listings/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="18" selection-start="315" selection-end="315" vertical-scroll-proportion="-5.0">
@@ -858,13 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugin/coffee/background.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="26" selection-start="999" selection-end="999" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/listings_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="41" selection-start="2078" selection-end="2078" vertical-scroll-proportion="0.0">
@@ -895,7 +879,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/mongoid.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="27" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.85037404">
+        <state line="87" column="27" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="9" selection-start="341" selection-end="375" vertical-scroll-proportion="-7.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin/coffee/background.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="1" selection-start="151" selection-end="151" vertical-scroll-proportion="0.28985506">
           <folding />
         </state>
       </provider>

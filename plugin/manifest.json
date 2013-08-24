@@ -1,15 +1,16 @@
 {
     "manifest_version": 2,
 
-    "name": "ChromePlugin",
-    "description": "This extension demonstrates a browser action with kittens.",
+    "name": "Rightmove Plugin",
+    "description": "Use this plugin to mark unavailable listings on rightmove",
     "version": "1.0",
 
     "permissions": [
         "https://secure.flickr.com/",
         "http://www.rightmove.co.uk/",
         "https://www.rightmove.co.uk/",
-        "http://localhost/"
+        "http://localhost/",
+        "http://chromeplugin.herokuapp.com/"
     ],
     "browser_action": {
         "default_icon": "static/icon.png",
