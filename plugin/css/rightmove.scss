@@ -24,7 +24,7 @@
 
   .plugin-button {
     top: 2px;
-    right: 100px;
+    right: 120px;
     width: 135px;
   }
 
@@ -40,13 +40,19 @@
 }
 
 .plugin-unavailable {
-  display: none;
+  display: block;
 
-  top:0;
+  top: 0;
   left: 0;
 
   width: 100%;
   height: 90px;
+
+  z-index: 2;
+  position: relative;
+
+  cursor: pointer;
+  text-decoration: none;
 
   background: rgba(231, 76, 60, 0.50);
 
@@ -74,6 +80,9 @@
 
   -webkit-touch-callout: none;
   user-select: none;
+
+  transition: background-color 1000ms;
+  -webkit-transition: background-color 1000ms;
 
   span {
     display: block;
