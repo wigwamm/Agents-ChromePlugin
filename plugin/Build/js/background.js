@@ -17,7 +17,7 @@
 
   currentListing = null;
 
-  API_URL = "http://chromeplugin.herokuapp.com";
+  API_URL = "http://localhost:3000";
 
   flagCurrentListing = function() {
     if (currentListing === null) {

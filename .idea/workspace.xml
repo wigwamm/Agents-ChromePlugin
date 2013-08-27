@@ -10,8 +10,8 @@
     <file path="/main.sass" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375643318439" ignored="false" />
     <file path="/main.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375644736393" ignored="false" />
     <file path="/rightmove.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377617548616" ignored="false" />
-    <file path="/rightmove.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377617925267" ignored="false" />
-    <file path="/background.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377612113538" ignored="false" />
+    <file path="/rightmove.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377618816517" ignored="false" />
+    <file path="/background.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377619101314" ignored="false" />
     <file path="/popup.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375652629970" ignored="false" />
     <file path="/manifest.json" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375647814856" ignored="false" />
     <file path="/listing.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377604387983" ignored="false" />
@@ -20,7 +20,12 @@
     <file path="/routes.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377609854592" ignored="false" />
     <file path="/mongoid.yml" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375699519153" ignored="false" />
     <file path="/_constants.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377609212186" ignored="false" />
-    <file path="$PROJECT_DIR$/plugin/Build/js/jquery.js" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377617739399" ignored="false" />
+    <file path="$PROJECT_DIR$/plugin/Build/js/jquery.js" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377619597480" ignored="false" />
+    <file path="$PROJECT_DIR$/plugin/Build/css/zoopla.css" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377619597480" ignored="false" />
+    <file path="$PROJECT_DIR$/plugin/Build/css/rightmove.css" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377619135081" ignored="false" />
+    <file path="/zoopla.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377619407138" ignored="false" />
+    <file path="/zoopla.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377619916446" ignored="false" />
+    <file path="/_common.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377619875408" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +48,16 @@
       <file leaf-file-name="rightmove.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugin/css/rightmove.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="55" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0">
+            <state line="52" column="17" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zoopla.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plugin/js/zoopla.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="19" selection-start="1347" selection-end="1347" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -52,7 +66,16 @@
       <file leaf-file-name="rightmove.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plugin/js/rightmove.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="80" selection-start="5742" selection-end="5742" vertical-scroll-proportion="0.56076133">
+            <state line="57" column="0" selection-start="1500" selection-end="1500" vertical-scroll-proportion="1.2954545">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_common.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plugin/js/_common.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="180" selection-start="3189" selection-end="3189" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -61,7 +84,7 @@
       <file leaf-file-name="background.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugin/js/background.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="1" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
+            <state line="5" column="1" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -70,7 +93,16 @@
       <file leaf-file-name="manifest.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="34" selection-start="551" selection-end="551" vertical-scroll-proportion="-12.5">
+            <state line="23" column="45" selection-start="694" selection-end="694" vertical-scroll-proportion="-14.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zoopla.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plugin/css/zoopla.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="19" selection-start="773" selection-end="773" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,9 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/plugin/coffee/rightmove.coffee" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/config/mongoid.yml" />
         <option value="$PROJECT_DIR$/plugin/coffee/background.coffee" />
         <option value="$PROJECT_DIR$/plugin/popup.html" />
         <option value="$PROJECT_DIR$/plugin/js/popup.coffee" />
@@ -98,9 +127,12 @@
         <option value="$PROJECT_DIR$/plugin/js/_constants.coffee" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/listings_controller.rb" />
-        <option value="$PROJECT_DIR$/plugin/js/background.coffee" />
-        <option value="$PROJECT_DIR$/plugin/manifest.json" />
         <option value="$PROJECT_DIR$/plugin/css/rightmove.scss" />
+        <option value="$PROJECT_DIR$/plugin/manifest.json" />
+        <option value="$PROJECT_DIR$/plugin/js/background.coffee" />
+        <option value="$PROJECT_DIR$/plugin/css/zoopla.scss" />
+        <option value="$PROJECT_DIR$/plugin/js/zoopla.coffee" />
+        <option value="$PROJECT_DIR$/plugin/js/_common.coffee" />
         <option value="$PROJECT_DIR$/plugin/js/rightmove.coffee" />
       </list>
     </option>
@@ -193,6 +225,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChromePlugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChromePlugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -315,6 +365,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/plugin/css" />
       <recent name="$PROJECT_DIR$/plugin/static" />
     </key>
   </component>
@@ -744,30 +795,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/plugin/css/rightmove.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="17" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="34" selection-start="551" selection-end="551" vertical-scroll-proportion="-12.5">
+        <state line="23" column="45" selection-start="694" selection-end="694" vertical-scroll-proportion="-14.375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plugin/js/background.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="1" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
+        <state line="5" column="1" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugin/css/rightmove.scss">
+    <entry file="file://$PROJECT_DIR$/plugin/css/zoopla.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="55" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0">
+        <state line="61" column="19" selection-start="773" selection-end="773" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin/js/_common.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="180" selection-start="3189" selection-end="3189" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin/js/zoopla.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="19" selection-start="1347" selection-end="1347" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plugin/js/rightmove.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="80" selection-start="5742" selection-end="5742" vertical-scroll-proportion="0.56076133">
+        <state line="57" column="0" selection-start="1500" selection-end="1500" vertical-scroll-proportion="1.2954545">
           <folding />
         </state>
       </provider>

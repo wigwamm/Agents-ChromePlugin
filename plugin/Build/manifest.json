@@ -17,6 +17,11 @@
             "matches": ["http://www.rightmove.co.uk/*"],
             "css": ["css/rightmove.css"],
             "js": ["js/jquery.js", "js/rightmove.js"]
+        },
+        {
+            "matches": ["http://www.zoopla.co.uk/*"],
+            "css": ["css/zoopla.css"],
+            "js": ["js/jquery.js", "js/zoopla.js"]
         }
     ],
 

@@ -8,20 +8,22 @@ injectBarUI = ->
 
 injectSummaryListUI = ->
   ui = $(summaryListUI)
-  injectionTarget = $('.summarymaincontent')
+  injectionTarget = $('ul.listing-results li')
 
   injectionTarget.each (i, container) ->
     ui = ui.clone()
     container = $(container)
 
     # Position the UI based on the image size
-    listingImg = container.find('.photos')
-    ui.height(listingImg.height() + 50)
-    ui.find('.plugin-unavailable').height(listingImg.height() - 8).hide()
+    listingImg = container.find('.photo-hover')
+    ui.width(listingImg.width())
+    ui.height(listingImg.height() + 60)
+    ui.css('top', 20)
+    ui.find('.plugin-unavailable').height(listingImg.height()).hide()
     ui.find('a').attr('href', listingImg.find('a').attr('href'))
 
     # Find the property id to update states later
-    id = parseInt(container.find('a').attr('id').replace(/\D/g, ''))
+    id = parseInt(container.attr('id').replace(/\D/g, ''))
     listings[id] = ui
 
     ((id, ui) ->
@@ -55,12 +57,11 @@ injectListingUI = ->
 
   container.append(ui)
 
-
 $ ->
   injectBarUI()
 
   # Detect which type of page the user is looking at
-  if $('li[name="summary-list-item"]').length > 0
+  if $('ul.listing-results li').length > 0
     injectSummaryListUI()
     updateAvailability()
   else if $('.propertydetails').length > 0

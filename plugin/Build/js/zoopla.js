@@ -125,16 +125,18 @@
   injectSummaryListUI = function() {
     var injectionTarget, ui;
     ui = $(summaryListUI);
-    injectionTarget = $('.summarymaincontent');
+    injectionTarget = $('ul.listing-results li');
     return injectionTarget.each(function(i, container) {
       var id, listingImg;
       ui = ui.clone();
       container = $(container);
-      listingImg = container.find('.photos');
-      ui.height(listingImg.height() + 50);
-      ui.find('.plugin-unavailable').height(listingImg.height() - 8).hide();
+      listingImg = container.find('.photo-hover');
+      ui.width(listingImg.width());
+      ui.height(listingImg.height() + 60);
+      ui.css('top', 20);
+      ui.find('.plugin-unavailable').height(listingImg.height()).hide();
       ui.find('a').attr('href', listingImg.find('a').attr('href'));
-      id = parseInt(container.find('a').attr('id').replace(/\D/g, ''));
+      id = parseInt(container.attr('id').replace(/\D/g, ''));
       listings[id] = ui;
       (function(id, ui) {
         return ui.find('.plugin-button').click(function(e) {
@@ -169,7 +171,7 @@
 
   $(function() {
     injectBarUI();
-    if ($('li[name="summary-list-item"]').length > 0) {
+    if ($('ul.listing-results li').length > 0) {
       injectSummaryListUI();
       return updateAvailability();
     } else if ($('.propertydetails').length > 0) {

@@ -2,8 +2,8 @@
 
 currentListing = null
 
-#API_URL = "http://localhost:3000"
-API_URL = "http://chromeplugin.herokuapp.com"
+API_URL = "http://localhost:3000"
+#API_URL = "http://chromeplugin.herokuapp.com"
 
 flagCurrentListing = ->
 
