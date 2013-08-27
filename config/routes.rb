@@ -1,7 +1,9 @@
 ChromePlugin::Application.routes.draw do
   resources :listings do
     collection do
-      post "search"
+      post 'search'
+      post 'create_id'
+      delete 'delete_id'
     end
   end
 

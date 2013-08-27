@@ -37,6 +37,31 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
   end
 
+  def create_id
+    @listing = Listing.new()
+    @listing.ids.append params[:id]
+
+    respond_to do |format|
+      if @listing.save
+        format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
+        format.json { render json: @listing, status: :created, location: @listing }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @listing.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def delete_id
+    @listing = Listing.where(ids: params[:id])
+    @listing.destroy
+
+    respond_to do |format|
+      format.html { redirect_to listings_url }
+      format.json { head :no_content }
+    end
+  end
+
   # POST /listings
   # POST /listings.json
   def create
@@ -83,7 +108,7 @@ class ListingsController < ApplicationController
   end
 
   def search
-    @listings = Listing.where(urls: {'$in' => params[:urls]})
+    @listings = Listing.where(ids: {'$in' => params[:listing_ids]})
 
     respond_to do |format|
       format.html { render 'listings/index' }

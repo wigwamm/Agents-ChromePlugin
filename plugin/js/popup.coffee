@@ -1,7 +1,4 @@
-SET_CURRENT_LISTING = 0
-RETURN_CURRENT_LISTING = 1
-FLAG_CURRENT_LISTING = 2
-SEARCH_URLS = 3
+# @include _constants
 
 sendMessage = (action, json, callback = null) ->
   chrome.runtime.sendMessage({
