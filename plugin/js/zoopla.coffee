@@ -1,6 +1,8 @@
 # @include _constants
 # @include _common
 
+ID_PREFIX = "zoopla_"
+
 injectBarUI = ->
   ui = $(pluginBarUI)
 
@@ -20,7 +22,7 @@ injectSummaryListUI = ->
     ui.height(listingImg.height() + 60)
     ui.css('top', 20)
     ui.find('.plugin-unavailable').height(listingImg.height()).hide()
-    ui.find('a').attr('href', listingImg.find('a').attr('href'))
+    ui.find('a').attr('href', container.find('a').attr('href'))
 
     # Find the property id to update states later
     id = parseInt(container.attr('id').replace(/\D/g, ''))
@@ -42,9 +44,9 @@ injectListingUI = ->
   id = parseInt(window.location.href.replace(/\D/g, ''))
 
   ui = $(listingUI)
-  container = $('#propertydetails')
-  ui.height(container.find('#outer').height() + 54)
-  ui.find('.plugin-unavailable').height(container.find('#outer').height()).hide()
+  container = $('#listing-details')
+  ui.height(container.find('#images-main-nav').height() + 100)
+  ui.find('.plugin-unavailable').height(container.find('#images-main-nav').height()).hide()
 
   listings[id] = ui
 
@@ -55,7 +57,7 @@ injectListingUI = ->
     else
       setAvailable(id, ui)
 
-  container.append(ui)
+  container.prepend(ui)
 
 $ ->
   injectBarUI()
@@ -64,6 +66,6 @@ $ ->
   if $('ul.listing-results li').length > 0
     injectSummaryListUI()
     updateAvailability()
-  else if $('.propertydetails').length > 0
+  else if $('#listing-details').length > 0
     injectListingUI()
     updateAvailability()

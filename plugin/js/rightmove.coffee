@@ -1,6 +1,8 @@
 # @include _constants
 # @include _common
 
+ID_PREFIX = "rightmove_"
+
 injectBarUI = ->
   ui = $(pluginBarUI)
 
@@ -55,9 +57,12 @@ injectListingUI = ->
 
   container.append(ui)
 
-
 $ ->
   injectBarUI()
+
+  # No results were found, don't add any extra features
+  if $('#noResults').length != 0
+    return
 
   # Detect which type of page the user is looking at
   if $('li[name="summary-list-item"]').length > 0

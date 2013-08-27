@@ -1,5 +1,5 @@
 (function() {
-  var FLAG_CURRENT_LISTING, RETURN_CURRENT_LISTING, SEARCH_LISTING_IDS, SEARCH_URLS, SET_CURRENT_LISTING, SET_LISTING_AVAILABLE, SET_LISTING_UNAVAILABLE, injectBarUI, injectListingUI, injectSummaryListUI, listingUI, listings, pluginBarUI, sendMessage, setAvailable, setUnavailable, setVisiblyAvailable, setVisiblyUnavailable, summaryListUI, unavailableListingIds, updateAvailability;
+  var FLAG_CURRENT_LISTING, ID_PREFIX, RETURN_CURRENT_LISTING, SEARCH_LISTING_IDS, SEARCH_URLS, SET_CURRENT_LISTING, SET_LISTING_AVAILABLE, SET_LISTING_UNAVAILABLE, injectBarUI, injectListingUI, injectSummaryListUI, listingUI, listings, pluginBarUI, sendMessage, setAvailable, setUnavailable, setVisiblyAvailable, setVisiblyUnavailable, summaryListUI, unavailableListingIds, updateAvailability;
 
   SET_CURRENT_LISTING = 0;
 
@@ -29,22 +29,23 @@
     var listingId, listingIds;
     listingIds = [];
     for (listingId in listings) {
-      listingIds.push(listingId);
+      listingIds.push(ID_PREFIX + listingId);
     }
     return sendMessage(SEARCH_LISTING_IDS, listingIds, function(unavailableListings) {
-      var id, listing, _i, _len, _results;
+      var cleanedId, id, listing, _i, _len, _results;
       _results = [];
       for (_i = 0, _len = unavailableListings.length; _i < _len; _i++) {
         listing = unavailableListings[_i];
         _results.push((function() {
           var _j, _len1, _ref, _results1;
-          _ref = listing.ids;
+          _ref = listing['ids'];
           _results1 = [];
           for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
             id = _ref[_j];
-            if (listings.hasOwnProperty(id)) {
-              setVisiblyUnavailable(listings[id]);
-              _results1.push(unavailableListingIds.push(parseInt(id)));
+            cleanedId = id.replace(/\D/g, '');
+            if (listings.hasOwnProperty(cleanedId)) {
+              setVisiblyUnavailable(listings[cleanedId]);
+              _results1.push(unavailableListingIds.push(parseInt(cleanedId)));
             } else {
               _results1.push(void 0);
             }
@@ -104,17 +105,19 @@
     });
   };
 
-  setAvailable = function(id, ui) {
-    sendMessage(SET_LISTING_UNAVAILABLE, id);
+  setUnavailable = function(id, ui) {
+    sendMessage(SET_LISTING_UNAVAILABLE, ID_PREFIX + id);
     setVisiblyUnavailable(ui);
     return unavailableListingIds.push(id);
   };
 
-  setUnavailable = function(id, ui) {
-    sendMessage(SET_LISTING_AVAILABLE, id);
+  setAvailable = function(id, ui) {
+    sendMessage(SET_LISTING_AVAILABLE, ID_PREFIX + id);
     setVisiblyAvailable(ui);
     return unavailableListingIds.splice(unavailableListingIds.indexOf(id), 1);
   };
+
+  ID_PREFIX = "rightmove_";
 
   injectBarUI = function() {
     var ui;
@@ -169,6 +172,9 @@
 
   $(function() {
     injectBarUI();
+    if ($('#noResults').length !== 0) {
+      return;
+    }
     if ($('li[name="summary-list-item"]').length > 0) {
       injectSummaryListUI();
       return updateAvailability();

@@ -1,5 +1,5 @@
 (function() {
-  var FLAG_CURRENT_LISTING, RETURN_CURRENT_LISTING, SEARCH_LISTING_IDS, SEARCH_URLS, SET_CURRENT_LISTING, SET_LISTING_AVAILABLE, SET_LISTING_UNAVAILABLE, injectBarUI, injectListingUI, injectSummaryListUI, listingUI, listings, pluginBarUI, sendMessage, setAvailable, setUnavailable, setVisiblyAvailable, setVisiblyUnavailable, summaryListUI, unavailableListingIds, updateAvailability;
+  var FLAG_CURRENT_LISTING, ID_PREFIX, RETURN_CURRENT_LISTING, SEARCH_LISTING_IDS, SEARCH_URLS, SET_CURRENT_LISTING, SET_LISTING_AVAILABLE, SET_LISTING_UNAVAILABLE, injectBarUI, injectListingUI, injectSummaryListUI, listingUI, listings, pluginBarUI, sendMessage, setAvailable, setUnavailable, setVisiblyAvailable, setVisiblyUnavailable, summaryListUI, unavailableListingIds, updateAvailability;
 
   SET_CURRENT_LISTING = 0;
 
@@ -29,22 +29,23 @@
     var listingId, listingIds;
     listingIds = [];
     for (listingId in listings) {
-      listingIds.push(listingId);
+      listingIds.push(ID_PREFIX + listingId);
     }
     return sendMessage(SEARCH_LISTING_IDS, listingIds, function(unavailableListings) {
-      var id, listing, _i, _len, _results;
+      var cleanedId, id, listing, _i, _len, _results;
       _results = [];
       for (_i = 0, _len = unavailableListings.length; _i < _len; _i++) {
         listing = unavailableListings[_i];
         _results.push((function() {
           var _j, _len1, _ref, _results1;
-          _ref = listing.ids;
+          _ref = listing['ids'];
           _results1 = [];
           for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
             id = _ref[_j];
-            if (listings.hasOwnProperty(id)) {
-              setVisiblyUnavailable(listings[id]);
-              _results1.push(unavailableListingIds.push(parseInt(id)));
+            cleanedId = id.replace(/\D/g, '');
+            if (listings.hasOwnProperty(cleanedId)) {
+              setVisiblyUnavailable(listings[cleanedId]);
+              _results1.push(unavailableListingIds.push(parseInt(cleanedId)));
             } else {
               _results1.push(void 0);
             }
@@ -104,17 +105,19 @@
     });
   };
 
-  setAvailable = function(id, ui) {
-    sendMessage(SET_LISTING_UNAVAILABLE, id);
+  setUnavailable = function(id, ui) {
+    sendMessage(SET_LISTING_UNAVAILABLE, ID_PREFIX + id);
     setVisiblyUnavailable(ui);
     return unavailableListingIds.push(id);
   };
 
-  setUnavailable = function(id, ui) {
-    sendMessage(SET_LISTING_AVAILABLE, id);
+  setAvailable = function(id, ui) {
+    sendMessage(SET_LISTING_AVAILABLE, ID_PREFIX + id);
     setVisiblyAvailable(ui);
     return unavailableListingIds.splice(unavailableListingIds.indexOf(id), 1);
   };
+
+  ID_PREFIX = "zoopla_";
 
   injectBarUI = function() {
     var ui;
@@ -135,7 +138,7 @@
       ui.height(listingImg.height() + 60);
       ui.css('top', 20);
       ui.find('.plugin-unavailable').height(listingImg.height()).hide();
-      ui.find('a').attr('href', listingImg.find('a').attr('href'));
+      ui.find('a').attr('href', container.find('a').attr('href'));
       id = parseInt(container.attr('id').replace(/\D/g, ''));
       listings[id] = ui;
       (function(id, ui) {
@@ -155,9 +158,9 @@
     var container, id, ui;
     id = parseInt(window.location.href.replace(/\D/g, ''));
     ui = $(listingUI);
-    container = $('#propertydetails');
-    ui.height(container.find('#outer').height() + 54);
-    ui.find('.plugin-unavailable').height(container.find('#outer').height()).hide();
+    container = $('#listing-details');
+    ui.height(container.find('#images-main-nav').height() + 100);
+    ui.find('.plugin-unavailable').height(container.find('#images-main-nav').height()).hide();
     listings[id] = ui;
     ui.find('.plugin-button').click(function(e) {
       if (unavailableListingIds.indexOf(id) === -1) {
@@ -166,7 +169,7 @@
         return setAvailable(id, ui);
       }
     });
-    return container.append(ui);
+    return container.prepend(ui);
   };
 
   $(function() {
@@ -174,7 +177,7 @@
     if ($('ul.listing-results li').length > 0) {
       injectSummaryListUI();
       return updateAvailability();
-    } else if ($('.propertydetails').length > 0) {
+    } else if ($('#listing-details').length > 0) {
       injectListingUI();
       return updateAvailability();
     }

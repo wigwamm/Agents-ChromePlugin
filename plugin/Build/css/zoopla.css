@@ -2,11 +2,22 @@ ul.listing-results li {
   position: relative;
   min-height: 179px !important; }
 
+#listing-details-tabs {
+  margin: 35px 0 0 0 !important; }
+
+#listing-details {
+  position: relative; }
+
+.clearfix {
+  position: relative; }
+
 .plugin-wrapper {
   position: absolute;
   top: 16px;
   width: 135px;
   height: 170px; }
+  .plugin-wrapper a {
+    text-decoration: none; }
 
 .plugin-wrapper-listing {
   position: absolute;
@@ -15,12 +26,12 @@ ul.listing-results li {
   width: 100%;
   height: 500px; }
   .plugin-wrapper-listing .plugin-button {
-    top: 2px;
-    right: 120px;
-    width: 100px; }
+    top: 33px;
+    right: 0px;
+    width: 140px; }
   .plugin-wrapper-listing .plugin-unavailable {
     position: absolute;
-    top: 54px; }
+    top: 118px; }
     .plugin-wrapper-listing .plugin-unavailable span {
       padding-top: 30%;
       font-size: 30px; }
@@ -31,10 +42,10 @@ ul.listing-results li {
   left: 0;
   width: 100%;
   height: 90px;
-  z-index: 2;
+  z-index: 1000;
   position: relative;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none !important;
   background: rgba(231, 76, 60, 0.5); }
   .plugin-unavailable span {
     color: white;
@@ -42,7 +53,8 @@ ul.listing-results li {
     padding-top: 32%;
     font-weight: bold;
     font-size: 22px;
-    text-align: center; }
+    text-align: center;
+    text-decoration: none !important; }
 
 .plugin-button {
   position: absolute;

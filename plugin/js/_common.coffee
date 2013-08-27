@@ -9,14 +9,15 @@ listingUI = "<div class='plugin-wrapper-listing'><div class='plugin-unavailable'
 updateAvailability = ->
   listingIds = []
   for listingId of listings
-    listingIds.push(listingId)
+    listingIds.push(ID_PREFIX + listingId)
 
   sendMessage(SEARCH_LISTING_IDS, listingIds, (unavailableListings) ->
     for listing in unavailableListings
-      for id in listing.ids
-        if listings.hasOwnProperty(id)
-          setVisiblyUnavailable(listings[id])
-          unavailableListingIds.push(parseInt(id))
+      for id in listing['ids']
+        cleanedId = id.replace(/\D/g, '')
+        if listings.hasOwnProperty(cleanedId)
+          setVisiblyUnavailable(listings[cleanedId])
+          unavailableListingIds.push(parseInt(cleanedId))
   )
 
 sendMessage = (action, json, callback = null) ->
@@ -53,12 +54,12 @@ setVisiblyAvailable = (ui) ->
     ui.find('.plugin-button span').text('mark unavailable').fadeIn()
   )
 
-setAvailable = (id, ui) ->
-  sendMessage(SET_LISTING_UNAVAILABLE, id)
+setUnavailable = (id, ui) ->
+  sendMessage(SET_LISTING_UNAVAILABLE, ID_PREFIX + id)
   setVisiblyUnavailable(ui)
   unavailableListingIds.push(id)
 
-setUnavailable = (id, ui) ->
-  sendMessage(SET_LISTING_AVAILABLE, id)
+setAvailable = (id, ui) ->
+  sendMessage(SET_LISTING_AVAILABLE, ID_PREFIX + id)
   setVisiblyAvailable(ui)
   unavailableListingIds.splice(unavailableListingIds.indexOf(id), 1)
