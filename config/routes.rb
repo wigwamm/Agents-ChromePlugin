@@ -1,4 +1,7 @@
 ChromePlugin::Application.routes.draw do
+  resources :users
+
+
   resources :listings do
     collection do
       post 'search'

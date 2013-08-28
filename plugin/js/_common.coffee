@@ -25,7 +25,7 @@ sendMessage = (action, json, callback = null) ->
   $('.plugin-loading-bar').fadeIn()
   chrome.runtime.sendMessage({
     action: action,
-    data: json
+    data: {userId: userId, data:json}
   }, (response) ->
     requestTime = new Date().getTime() - requestStartTime
     if (requestTime >= 1000)
@@ -63,3 +63,14 @@ setAvailable = (id, ui) ->
   sendMessage(SET_LISTING_AVAILABLE, ID_PREFIX + id)
   setVisiblyAvailable(ui)
   unavailableListingIds.splice(unavailableListingIds.indexOf(id), 1)
+
+userId = localStorage.getItem('userId')
+
+createUserIfNecessary = ->
+  if userId == null
+    sendMessage(REGISTER_USER, null, (user) ->
+      localStorage.setItem('userId', user['_id'])
+    )
+
+$ ->
+  createUserIfNecessary()

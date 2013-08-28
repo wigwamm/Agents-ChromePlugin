@@ -16,27 +16,14 @@ flagCurrentListing = ->
     console.log "Error", error
   )
 
-unavailableListings = []
-
-searchUrls = (urls, callback) ->
-
+searchListingIds = (data, callback) ->
   $.ajax(API_URL + '/listings/search.json', {
     type: 'post',
     dataType: 'json',
-    data: {urls: urls},
-    success: (response) ->
-      console.log "Success", response
-      callback(response)
-    , error: (error) ->
-      console.log "Error", error
-      callback([])
-  })
-
-searchListingIds = (listingIds, callback) ->
-  $.ajax(API_URL + '/listings/search.json', {
-    type: 'post',
-    dataType: 'json',
-    data: {listing_ids: listingIds},
+    data: {
+      user_id: data.userId,
+      listing_ids: data.data
+    },
     success: (response) ->
       console.log "Success", response
       callback(response)
@@ -45,11 +32,14 @@ searchListingIds = (listingIds, callback) ->
       callback([])
   })
 
-setListingUnavailable = (listingId, callback) ->
+setListingUnavailable = (data, callback) ->
   $.ajax(API_URL + '/listings/create_id.json', {
     type: 'post',
     dataType: 'json',
-    data: {id: listingId},
+    data: {
+      user_id: data.userId,
+      id: data.data
+    },
     success: (response) ->
       console.log "Success", response
       callback(response)
@@ -58,11 +48,14 @@ setListingUnavailable = (listingId, callback) ->
       callback([])
   })
 
-setListingAvailable = (listingId, callback) ->
+setListingAvailable = (data, callback) ->
   $.ajax(API_URL + '/listings/delete_id.json', {
     type: 'delete',
     dataType: 'json',
-    data: {id: listingId},
+    data: {
+      user_id: data.userId,
+      id: data.data
+    },
     success: (response) ->
       console.log "Success", response
       callback(response)
@@ -70,6 +63,20 @@ setListingAvailable = (listingId, callback) ->
       console.log "Error", error
       callback([])
   })
+
+registerUser = (callback) ->
+  $.ajax(API_URL + '/users.json', {
+    type: 'post',
+    dataType: 'json',
+    contentType: 'application/json',
+    success: (response) ->
+      console.log "Success", response
+      callback(response)
+  , error: (error) ->
+      console.log "Error", error
+      callback([])
+  })
+
 
 onMessage = (request, sender, sendResponse) ->
 
@@ -83,7 +90,7 @@ onMessage = (request, sender, sendResponse) ->
 
     when FLAG_CURRENT_LISTING then flagCurrentListing()
 
-    when SEARCH_URLS then searchUrls(request.data, (listings) ->
+    when SEARCH_URLS then searchUrls(request.data.data, (listings) ->
       sendResponse listings
     )
 
@@ -97,6 +104,10 @@ onMessage = (request, sender, sendResponse) ->
 
     when SET_LISTING_AVAILABLE then setListingAvailable(request.data, (listing) ->
       sendResponse()
+    )
+
+    when REGISTER_USER then registerUser((user) ->
+      sendResponse(user)
     )
 
     else

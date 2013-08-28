@@ -38,8 +38,15 @@ class ListingsController < ApplicationController
   end
 
   def create_id
-    @listing = Listing.new()
-    @listing.ids.append params[:id]
+    @listing = Listing.where(ids: params[:id]).first_or_create
+    unless @listing.marked_unavailable_by.include? params[:user_id]
+      @listing.marked_unavailable_by.push params[:user_id]
+      @listing.availability_score += 1
+    end
+
+    unless @listing.ids.kind_of?(Array)
+      @listing.ids = [params[:id]]
+    end
 
     respond_to do |format|
       if @listing.save
@@ -54,7 +61,20 @@ class ListingsController < ApplicationController
 
   def delete_id
     @listing = Listing.where(ids: params[:id])
-    @listing.destroy
+    if @listing.count > 0
+      @listing = @listing.first
+
+      if @listing.marked_unavailable_by.include? params[:user_id]
+        @listing.marked_unavailable_by.delete(params[:user_id])
+      end
+
+      unless @listing.marked_available_by.include? params[:user_id]
+        @listing.marked_available_by.push(params[:user_id])
+        @listing.availability_score -= 1
+      end
+
+      @listing.save
+    end
 
     respond_to do |format|
       format.html { redirect_to listings_url }
@@ -108,7 +128,8 @@ class ListingsController < ApplicationController
   end
 
   def search
-    @listings = Listing.where(ids: {'$in' => params[:listing_ids]})
+    @listings = Listing.where(
+        ids: {'$in' => params[:listing_ids]}, availability_score: {'$gt' => 1})
 
     respond_to do |format|
       format.html { render 'listings/index' }

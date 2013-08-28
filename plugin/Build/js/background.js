@@ -1,5 +1,5 @@
 (function() {
-  var API_URL, FLAG_CURRENT_LISTING, RETURN_CURRENT_LISTING, SEARCH_LISTING_IDS, SEARCH_URLS, SET_CURRENT_LISTING, SET_LISTING_AVAILABLE, SET_LISTING_UNAVAILABLE, currentListing, flagCurrentListing, onMessage, searchListingIds, searchUrls, setListingAvailable, setListingUnavailable, unavailableListings;
+  var API_URL, FLAG_CURRENT_LISTING, REGISTER_USER, RETURN_CURRENT_LISTING, SEARCH_LISTING_IDS, SEARCH_URLS, SET_CURRENT_LISTING, SET_LISTING_AVAILABLE, SET_LISTING_UNAVAILABLE, currentListing, flagCurrentListing, onMessage, registerUser, searchListingIds, setListingAvailable, setListingUnavailable;
 
   SET_CURRENT_LISTING = 0;
 
@@ -14,6 +14,8 @@
   SET_LISTING_UNAVAILABLE = 5;
 
   SET_LISTING_AVAILABLE = 6;
+
+  REGISTER_USER = 7;
 
   currentListing = null;
 
@@ -30,14 +32,13 @@
     });
   };
 
-  unavailableListings = [];
-
-  searchUrls = function(urls, callback) {
+  searchListingIds = function(data, callback) {
     return $.ajax(API_URL + '/listings/search.json', {
       type: 'post',
       dataType: 'json',
       data: {
-        urls: urls
+        user_id: data.userId,
+        listing_ids: data.data
       },
       success: function(response) {
         console.log("Success", response);
@@ -50,30 +51,13 @@
     });
   };
 
-  searchListingIds = function(listingIds, callback) {
-    return $.ajax(API_URL + '/listings/search.json', {
-      type: 'post',
-      dataType: 'json',
-      data: {
-        listing_ids: listingIds
-      },
-      success: function(response) {
-        console.log("Success", response);
-        return callback(response);
-      },
-      error: function(error) {
-        console.log("Error", error);
-        return callback([]);
-      }
-    });
-  };
-
-  setListingUnavailable = function(listingId, callback) {
+  setListingUnavailable = function(data, callback) {
     return $.ajax(API_URL + '/listings/create_id.json', {
       type: 'post',
       dataType: 'json',
       data: {
-        id: listingId
+        user_id: data.userId,
+        id: data.data
       },
       success: function(response) {
         console.log("Success", response);
@@ -86,13 +70,30 @@
     });
   };
 
-  setListingAvailable = function(listingId, callback) {
+  setListingAvailable = function(data, callback) {
     return $.ajax(API_URL + '/listings/delete_id.json', {
       type: 'delete',
       dataType: 'json',
       data: {
-        id: listingId
+        user_id: data.userId,
+        id: data.data
       },
+      success: function(response) {
+        console.log("Success", response);
+        return callback(response);
+      },
+      error: function(error) {
+        console.log("Error", error);
+        return callback([]);
+      }
+    });
+  };
+
+  registerUser = function(callback) {
+    return $.ajax(API_URL + '/users.json', {
+      type: 'post',
+      dataType: 'json',
+      contentType: 'application/json',
       success: function(response) {
         console.log("Success", response);
         return callback(response);
@@ -117,7 +118,7 @@
         flagCurrentListing();
         break;
       case SEARCH_URLS:
-        searchUrls(request.data, function(listings) {
+        searchUrls(request.data.data, function(listings) {
           return sendResponse(listings);
         });
         break;
@@ -134,6 +135,11 @@
       case SET_LISTING_AVAILABLE:
         setListingAvailable(request.data, function(listing) {
           return sendResponse();
+        });
+        break;
+      case REGISTER_USER:
+        registerUser(function(user) {
+          return sendResponse(user);
         });
         break;
       default:

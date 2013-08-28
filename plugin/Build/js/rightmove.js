@@ -1,5 +1,5 @@
 (function() {
-  var FLAG_CURRENT_LISTING, ID_PREFIX, RETURN_CURRENT_LISTING, SEARCH_LISTING_IDS, SEARCH_URLS, SET_CURRENT_LISTING, SET_LISTING_AVAILABLE, SET_LISTING_UNAVAILABLE, injectBarUI, injectListingUI, injectSummaryListUI, listingUI, listings, pluginBarUI, sendMessage, setAvailable, setUnavailable, setVisiblyAvailable, setVisiblyUnavailable, summaryListUI, unavailableListingIds, updateAvailability;
+  var FLAG_CURRENT_LISTING, ID_PREFIX, REGISTER_USER, RETURN_CURRENT_LISTING, SEARCH_LISTING_IDS, SEARCH_URLS, SET_CURRENT_LISTING, SET_LISTING_AVAILABLE, SET_LISTING_UNAVAILABLE, createUserIfNecessary, injectBarUI, injectListingUI, injectSummaryListUI, listingUI, listings, pluginBarUI, sendMessage, setAvailable, setUnavailable, setVisiblyAvailable, setVisiblyUnavailable, summaryListUI, unavailableListingIds, updateAvailability, userId;
 
   SET_CURRENT_LISTING = 0;
 
@@ -14,6 +14,8 @@
   SET_LISTING_UNAVAILABLE = 5;
 
   SET_LISTING_AVAILABLE = 6;
+
+  REGISTER_USER = 7;
 
   listings = {};
 
@@ -66,7 +68,10 @@
     $('.plugin-loading-bar').fadeIn();
     return chrome.runtime.sendMessage({
       action: action,
-      data: json
+      data: {
+        userId: userId,
+        data: json
+      }
     }, function(response) {
       var requestTime;
       requestTime = new Date().getTime() - requestStartTime;
@@ -116,6 +121,20 @@
     setVisiblyAvailable(ui);
     return unavailableListingIds.splice(unavailableListingIds.indexOf(id), 1);
   };
+
+  userId = localStorage.getItem('userId');
+
+  createUserIfNecessary = function() {
+    if (userId === null) {
+      return sendMessage(REGISTER_USER, null, function(user) {
+        return localStorage.setItem('userId', user['_id']);
+      });
+    }
+  };
+
+  $(function() {
+    return createUserIfNecessary();
+  });
 
   ID_PREFIX = "rightmove_";
 
