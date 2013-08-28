@@ -128,8 +128,12 @@ class ListingsController < ApplicationController
   end
 
   def search
-    @listings = Listing.where(
-        ids: {'$in' => params[:listing_ids]}, availability_score: {'$gt' => 1})
+    @listings = Listing.where('$or' => [
+      # Search for listings that are marked unavailable by more than 2 people
+      {:ids.in => params[:listing_ids], :availability_score.gt => 1},
+      # Search for ads that are marked unavailable by you
+      {:ids.in => params[:listing_ids], :marked_unavailable_by => params[:user_id]}
+    ])
 
     respond_to do |format|
       format.html { render 'listings/index' }
