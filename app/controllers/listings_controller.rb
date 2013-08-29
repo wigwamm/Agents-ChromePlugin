@@ -1,4 +1,8 @@
 class ListingsController < ApplicationController
+
+  after_filter :set_access_control_headers
+  include AccessControl
+
   # GET /listings
   # GET /listings.json
   def index

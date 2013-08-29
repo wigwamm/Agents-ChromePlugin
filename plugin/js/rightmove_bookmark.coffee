@@ -1,11 +1,12 @@
-# @include _plugin_communication
+# @include _background_api_calls
+# @include _bookmark_communication
 # @include _constants
 # @include _common
 # @include _rightmove_ui
 
-createUserIfNecessary()
+setTimeout(->
+  createUserIfNecessary()
 
-$ ->
   injectBarUI()
 
   # No results were found, don't add any extra features
@@ -19,3 +20,5 @@ $ ->
   else if $('.propertydetails').length > 0
     injectListingUI()
     updateAvailability()
+
+,100)

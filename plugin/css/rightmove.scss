@@ -145,3 +145,54 @@
     float: left;
   }
 }
+
+.plugin-box-wrapper {
+
+  z-index: 21;
+  width: 100%;
+  position: fixed;
+  top: 0;
+
+  .plugin-box-container {
+    position: relative;
+    background: #3498db;
+    color: #222;
+
+    width: 300px;
+
+    margin: 0 auto;
+
+    z-index: 10000;
+  }
+
+  h2 {
+    color: #ffffff;
+    margin: 0 10px 10px 10px;
+    padding-top: 20px;
+    font-size: 30px;
+    text-align: center;
+
+  }
+
+  p {
+    margin: 10px;
+    color: #FFFFFF;
+    font-size: 16px;
+    text-align: center;
+
+  }
+
+  iframe {
+    margin: 10px 0 20px 90px;
+  }
+
+  .close {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

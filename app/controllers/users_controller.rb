@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  after_filter :set_access_control_headers
+  include AccessControl
+
   # GET /users
   # GET /users.json
   def index

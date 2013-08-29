@@ -1,11 +1,12 @@
-# @include _plugin_communication
+# @include _background_api_calls
+# @include _bookmark_communication
 # @include _constants
 # @include _common
 # @include _zoopla_ui
 
-createUserIfNecessary()
+setTimeout(->
+  createUserIfNecessary()
 
-$ ->
   injectBarUI()
 
   # Detect which type of page the user is looking at
@@ -15,3 +16,4 @@ $ ->
   else if $('#listing-details').length > 0
     injectListingUI()
     updateAvailability()
+,100)
