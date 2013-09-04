@@ -39,10 +39,12 @@
 </div>
 <div id='map'></div>
 <script type='text/javascript'>
-    var map = L.mapbox.map('map', 'zanfa.map-eew6jiv6', {
-        detectRetina: true,
-        retinaVersion: 'zanfa.map-qpz94u34'
-    }).setView([<%= @location[1] %>, <%= @location[0] %>], 15);
+    var map = L.mapbox.map('map')
+            .addLayer(L.mapbox.tileLayer('zanfa.map-eew6jiv6', {
+                detectRetina: true,
+                retinaVersion: 'zanfa.map-qpz94u34'
+            }))
+            .setView([<%= @location[1] %>, <%= @location[0] %>], 15);
 
     <% @listings.each do |listing| %>
     L.marker([<%= listing.location[0] %>, <%= listing.location[1] %>]).addTo(map);
