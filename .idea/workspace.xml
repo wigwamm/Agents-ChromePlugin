@@ -40,7 +40,7 @@
     <file path="/thread-pool.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377873063145" ignored="false" />
     <file path="/full_listing.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378293084742" ignored="false" />
     <file path="$PROJECT_DIR$/../Startups/app/controllers/startups_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377876330164" ignored="false" />
-    <file path="/near.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378308700901" ignored="false" />
+    <file path="/near.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378310262889" ignored="false" />
     <file path="/search_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378308990640" ignored="false" />
     <file path="/search.css.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378301280764" ignored="false" />
     <file path="/application.css" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378207384475" ignored="false" />
@@ -66,10 +66,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="search_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="search_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="39" selection-start="1270" selection-end="1270" vertical-scroll-proportion="0.7144949">
+            <state line="30" column="54" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -84,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="near.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="near.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/search/near.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="21" selection-start="1903" selection-end="1903" vertical-scroll-proportion="-25.583334">
+            <state line="33" column="148" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.7511381">
               <folding />
             </state>
           </provider>
@@ -117,8 +117,8 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/crawler/postcode_crawler.rb" />
         <option value="$PROJECT_DIR$/app/views/agents/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/search/near.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/search_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/search/near.html.erb" />
       </list>
     </option>
   </component>
@@ -994,16 +994,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/search/near.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="21" selection-start="1903" selection-end="1903" vertical-scroll-proportion="-25.583334">
+        <state line="30" column="54" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/search/near.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="39" selection-start="1270" selection-end="1270" vertical-scroll-proportion="0.7144949">
+        <state line="33" column="148" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.7511381">
           <folding />
         </state>
       </provider>

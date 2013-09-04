@@ -30,10 +30,10 @@
     <%= f.input :lat, as: :hidden %>
     <%= f.input :lng, as: :hidden %>
     <%= f.input :radius, as: :hidden %>
-    <%= f.input :type, collection: type_collection, required: false, include_blank: 'Any' %>
-    <%= f.input :size, collection: size_collection, required: false, include_blank: 'Any' %>
-    <%= f.input :min_price, label: 'Min. Price', collection: min_price, required: false, include_blank: 'Any Price' %>
-    <%= f.input :max_price, label: 'Max. Price', collection: max_price, required: false, include_blank: 'Any Price' %>
+    <%= f.input :type, collection: type_collection, required: false, include_blank: 'Any', selected: params[:search][:type] %>
+    <%= f.input :size, collection: size_collection, required: false, include_blank: 'Any', selected: params[:search][:size] %>
+    <%= f.input :min_price, label: 'Min. Price', collection: min_price, required: false, include_blank: 'Any Price', selected: params[:search][:min_price] %>
+    <%= f.input :max_price, label: 'Max. Price', collection: max_price, required: false, include_blank: 'Any Price', selected: params[:search][:max_price] %>
     <%= f.submit 'Search' %>
   <% end %>
 </div>
