@@ -1,0 +1,47 @@
+<div class="search">
+  <%= simple_form_for :search, url: '/search', method: :get do |f| %>
+    <%
+        type_collection = [
+                'Flat', 'House', 'Terraced house', 'Other'
+        ]
+
+        size_collection = {
+                'Studio' => 0,
+                '1 Bedroom' => 1,
+                '2 Bedroom' => 2,
+                '3 Bedroom' => 3,
+                '4 Bedroom' => 4,
+                '5 Bedroom' => 5,
+                '6 Bedroom' => 6
+        }
+
+        min_price = []
+        (100..1000).step(50) do |price|
+          min_price.push "£#{price} pw"
+        end
+
+        max_price = []
+        (150..1000).step(50) do |price|
+          max_price.push "£#{price} pw"
+        end
+
+
+    %>
+    <%= f.input :type, collection: type_collection, required: false, include_blank: 'Any' %>
+    <%= f.input :size, collection: size_collection, required: false, include_blank: 'Any' %>
+    <%= f.input :min_price, label: 'Min. Price', collection: min_price, required: false, include_blank: 'Any Price' %>
+    <%= f.input :max_price, label: 'Max. Price', collection: max_price, required: false, include_blank: 'Any Price' %>
+    <%= f.submit 'Search' %>
+  <% end %>
+</div>
+<div id='map'></div>
+<script type='text/javascript'>
+    var map = L.mapbox.map('map', 'zanfa.map-eew6jiv6', {
+        detectRetina: true,
+        retinaVersion: 'zanfa.map-qpz94u34'
+    }).setView([51.474, -0.167], 13);
+
+    <% @listings.each do |listing| %>
+    L.marker([<%= listing.location[0] %>, <%= listing.location[1] %>]).addTo(map);
+    <% end %>
+</script>

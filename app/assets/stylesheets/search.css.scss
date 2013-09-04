@@ -1,0 +1,25 @@
+// Place all the styles related to the Search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.search {
+  position: absolute;
+  background: #eeeeee;
+
+  width: 200px;
+
+  top: 40px;
+  left: 0;
+
+  z-index: 1;
+}

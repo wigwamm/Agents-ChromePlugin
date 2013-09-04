@@ -1,4 +1,11 @@
 ChromePlugin::Application.routes.draw do
+  get "agents/index"
+
+  get 'agents/:id' => 'agents#show', as:'agent'
+
+  get 'search/near'
+  get 'search', to: 'search#index'
+
   resources :users
 
 

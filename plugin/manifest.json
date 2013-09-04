@@ -1,14 +1,13 @@
 {
     "manifest_version": 2,
 
-    "name": "Rightmove Plugin",
-    "description": "Use this plugin to mark unavailable listings on rightmove",
+    "name": "Wrongmove",
+    "description": "Rightmove on steroids",
     "version": "1.0",
 
     "permissions": [
         "http://www.rightmove.co.uk/",
-        "https://www.rightmove.co.uk/",
-        "http://localhost/",
+        "http://www.zoopla.co.uk/",
         "http://chromeplugin.herokuapp.com/"
     ],
 

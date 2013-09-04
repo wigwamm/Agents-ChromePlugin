@@ -5,7 +5,7 @@ development:
     default:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: chrome_plugin_development
+      database: chrome_plugin_crawler_development
       # Provides the hosts the default session can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
@@ -87,3 +87,16 @@ production:
         safe: true
         skip_version_check: true
 
+crawl:
+  sessions:
+    default:
+      database: chrome_plugin_crawler_development
+
+      # Provides the hosts the default session can connect to. Must be an array
+      # of host:port pairs. (required)
+      hosts:
+        - localhost:27017
+
+      max_retries_on_connection_failure: 20
+      persist_in_safe_mode: true
+      skip_version_check: true

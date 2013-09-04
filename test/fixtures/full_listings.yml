@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  property_id: MyString
+  type: 
+  price: MyString
+  price_period: MyString
+  pictures: MyString
+  agent_name: MyString
+  agent_address: MyString
+  address: MyString
+  number: MyString
+  location: MyString
+
+two:
+  property_id: MyString
+  type: 
+  price: MyString
+  price_period: MyString
+  pictures: MyString
+  agent_name: MyString
+  agent_address: MyString
+  address: MyString
+  number: MyString
+  location: MyString
