@@ -17,6 +17,7 @@ class SearchController < ApplicationController
     max_price = params[:search][:max_price]
     lat = params[:search][:lat]
     lng = params[:search][:lng]
+    radius = params[:search][:radius]
 
     if type and type.length > 0
       filter[:type] = type.downcase
@@ -28,12 +29,14 @@ class SearchController < ApplicationController
 
     if min_price and min_price.length > 0
       filter[:price] = {'$gt' => (Integer(min_price.gsub(/\D/, '')) - 1)}
+      filter[:price_period] = 'pw'
     end
 
     if max_price and max_price.length > 0
       filter_price = filter[:price] || {}
       filter_price['$lt'] = (Integer(max_price.gsub(/\D/, '')) + 1)
       filter[:price] = filter_price
+      filter[:price_period] = 'pw'
     end
 
     if lat and lng and lat.length > 0 and lng.length > 0
@@ -42,7 +45,11 @@ class SearchController < ApplicationController
       @location = [-0.167, 51.474]
     end
 
-    @listings = FullListing.near(@location, 5).where(filter).limit(250)
+
+    query_radius = 4
+    query_radius = Float(radius) * 0.25 if radius and radius.length > 0
+
+    @listings = FullListing.near(@location, query_radius, units: :km).where(filter).limit(250)
 
     render 'search/near'
   end
