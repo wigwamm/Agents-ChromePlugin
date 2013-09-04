@@ -27,6 +27,8 @@
 
 
     %>
+    <%= f.input :lat, as: :hidden %>
+    <%= f.input :lng, as: :hidden %>
     <%= f.input :type, collection: type_collection, required: false, include_blank: 'Any' %>
     <%= f.input :size, collection: size_collection, required: false, include_blank: 'Any' %>
     <%= f.input :min_price, label: 'Min. Price', collection: min_price, required: false, include_blank: 'Any Price' %>
@@ -39,9 +41,15 @@
     var map = L.mapbox.map('map', 'zanfa.map-eew6jiv6', {
         detectRetina: true,
         retinaVersion: 'zanfa.map-qpz94u34'
-    }).setView([51.474, -0.167], 13);
+    }).setView([<%= @location[1] %>, <%= @location[0] %>], 15);
 
     <% @listings.each do |listing| %>
     L.marker([<%= listing.location[0] %>, <%= listing.location[1] %>]).addTo(map);
     <% end %>
+
+    $('form.search').submit(function () {
+        var center = map.getCenter();
+        $('#search_lat').val(center.lat);
+        $('#search_lng').val(center.lng);
+    });
 </script>

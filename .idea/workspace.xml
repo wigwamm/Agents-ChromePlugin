@@ -40,13 +40,13 @@
     <file path="/thread-pool.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377873063145" ignored="false" />
     <file path="/full_listing.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378293084742" ignored="false" />
     <file path="$PROJECT_DIR$/../Startups/app/controllers/startups_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377876330164" ignored="false" />
-    <file path="/near.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378302559214" ignored="false" />
-    <file path="/search_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378303838651" ignored="false" />
+    <file path="/near.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378306820111" ignored="false" />
+    <file path="/search_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378306721262" ignored="false" />
     <file path="/search.css.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378301280764" ignored="false" />
     <file path="/application.css" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378207384475" ignored="false" />
     <file path="/agent.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378219026541" ignored="false" />
     <file path="/agents_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378225253059" ignored="false" />
-    <file path="/show.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378296325762" ignored="false" />
+    <file path="/show.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378306413762" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,16 +69,7 @@
       <file leaf-file-name="search_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="23" selection-start="503" selection-end="503" vertical-scroll-proportion="0.43485087">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/agents/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="58" selection-start="516" selection-end="516" vertical-scroll-proportion="-8.75">
+            <state line="44" column="46" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.5885287">
               <folding />
             </state>
           </provider>
@@ -96,7 +87,7 @@
       <file leaf-file-name="near.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/search/near.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="62" selection-start="647" selection-end="647" vertical-scroll-proportion="-11.791667">
+            <state line="43" column="61" selection-start="1499" selection-end="1499" vertical-scroll-proportion="-5.0833335">
               <folding />
             </state>
           </provider>
@@ -120,6 +111,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="postcode_crawler.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/postcode_crawler.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="41" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thread-pool.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/thread-pool.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="62" selection-start="2873" selection-end="2873" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="search.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/search.css.scss">
           <provider selected="true" editor-type-id="text-editor">
@@ -129,10 +138,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
+      <file leaf-file-name="listing_crawler.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crawler/listing_crawler.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="16" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
+            <state line="12" column="14" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -155,13 +164,13 @@
         <option value="$PROJECT_DIR$/app/models/agent.rb" />
         <option value="$PROJECT_DIR$/app/views/agents/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/agents_controller.rb" />
-        <option value="$PROJECT_DIR$/crawler/postcode_crawler.rb" />
         <option value="$PROJECT_DIR$/app/models/full_listing.rb" />
         <option value="$PROJECT_DIR$/crawler/listing_crawler.rb" />
-        <option value="$PROJECT_DIR$/app/views/agents/show.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/search.css.scss" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/crawler/postcode_crawler.rb" />
+        <option value="$PROJECT_DIR$/app/views/agents/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/search/near.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/search_controller.rb" />
       </list>
@@ -854,19 +863,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="589" y="22" width="851" height="821" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2621118" sideWeight="0.6712707" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.6174033" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2621118" sideWeight="0.67403316" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.5331492" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.33701658" sideWeight="0.22197802" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32596686" sideWeight="0.778022" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32596686" sideWeight="0.778022" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -937,36 +946,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/app/controllers/search_controller.rb</url>
-          <line>4</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/app/controllers/search_controller.rb</url>
-          <line>35</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="44" />
+      <option name="time" value="47" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/crawler/thread-pool.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="17" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/postcode_crawler.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="25" selection-start="1552" selection-end="1552" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/mongoid.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="26" selection-start="2619" selection-end="2619" vertical-scroll-proportion="0.0">
@@ -981,23 +964,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/listing_crawler.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="13" selection-start="2862" selection-end="2862" vertical-scroll-proportion="0.4070278">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/full_listing.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="4" selection-start="527" selection-end="527" vertical-scroll-proportion="0.49568966">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/agents_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="14" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1037,6 +1006,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/agents_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="14" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/postcode_crawler.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="41" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/listing_crawler.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="14" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/thread-pool.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="62" selection-start="2873" selection-end="2873" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="28" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
@@ -1046,21 +1043,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/agents/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="58" selection-start="516" selection-end="516" vertical-scroll-proportion="-8.75">
+        <state line="10" column="56" selection-start="403" selection-end="403" vertical-scroll-proportion="-6.25">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/search/near.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="62" selection-start="647" selection-end="647" vertical-scroll-proportion="-11.791667">
+        <state line="43" column="61" selection-start="1499" selection-end="1499" vertical-scroll-proportion="-5.0833335">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="23" selection-start="503" selection-end="503" vertical-scroll-proportion="0.43485087">
+        <state line="44" column="46" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.5885287">
           <folding />
         </state>
       </provider>

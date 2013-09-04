@@ -3,6 +3,7 @@ class SearchController < ApplicationController
     @listings = FullListing.near([-0.166683, 51.473137], 100, :units => :km).limit(250)
 
     @count = @listings.count
+    @location = [-0.167, 51.474]
 
   end
 
@@ -14,6 +15,8 @@ class SearchController < ApplicationController
     size = params[:search][:size]
     min_price = params[:search][:min_price]
     max_price = params[:search][:max_price]
+    lat = params[:search][:lat]
+    lng = params[:search][:lng]
 
     if type and type.length > 0
       filter[:type] = type.downcase
@@ -33,7 +36,13 @@ class SearchController < ApplicationController
       filter[:price] = filter_price
     end
 
-    @listings = FullListing.where(filter).limit(250)
+    if lat and lng and lat.length > 0 and lng.length > 0
+      @location = [Float(lng), Float(lat)]
+    else
+      @location = [-0.167, 51.474]
+    end
+
+    @listings = FullListing.near(@location, 5).where(filter).limit(250)
 
     render 'search/near'
   end

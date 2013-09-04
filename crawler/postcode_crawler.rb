@@ -17,9 +17,9 @@ queue = channel.queue('links')
 districts = []
 
 File.open('postcodes.csv', 'r').each_line do |line|
-  postcode_area = line[0..2]
+  postcode_area = line[0..1]
 
-  if postcode_area == 'SW2'
+  if postcode_area == 'SW'
     districts.push line[0..(line.index(',') - 1)]
   end
 

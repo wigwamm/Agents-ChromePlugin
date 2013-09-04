@@ -3,7 +3,7 @@
     var map = L.mapbox.map('map', 'zanfa.map-eew6jiv6', {
         detectRetina: true,
         retinaVersion: 'zanfa.map-qpz94u34'
-    }).setView([51.474, -0.167], 16);
+    }).setView([<%= @location[1] %>, <%= @location[0] %>], 16);
 
     <% @agent.full_listings.each do |listing| %>
     L.marker([<%= listing.location[0] %>, <%= listing.location[1] %>]).addTo(map);
