@@ -42,14 +42,14 @@ class ListingsController < ApplicationController
   end
 
   def create_id
-    @listing = Listing.where(ids: params[:id]).first_or_create
+    @listing = Listing.where(property_ids: params[:id]).first_or_create
     unless @listing.marked_unavailable_by.include? params[:user_id]
       @listing.marked_unavailable_by.push params[:user_id]
       @listing.availability_score += 1
     end
 
-    unless @listing.ids.kind_of?(Array)
-      @listing.ids = [params[:id]]
+    unless @listing.property_ids.kind_of?(Array)
+      @listing.property_ids = [params[:id]]
     end
 
     respond_to do |format|
@@ -64,7 +64,7 @@ class ListingsController < ApplicationController
   end
 
   def delete_id
-    @listing = Listing.where(ids: params[:id])
+    @listing = Listing.where(property_ids: params[:id])
     if @listing.count > 0
       @listing = @listing.first
 
@@ -134,9 +134,9 @@ class ListingsController < ApplicationController
   def search
     @listings = Listing.where('$or' => [
       # Search for listings that are marked unavailable by more than 2 people
-      {:ids.in => params[:listing_ids], :availability_score.gt => 1},
+      {:property_ids.in => params[:listing_ids], :availability_score.gt => 1},
       # Search for ads that are marked unavailable by you
-      {:ids.in => params[:listing_ids], :marked_unavailable_by => params[:user_id]}
+      {:property_ids.in => params[:listing_ids], :marked_unavailable_by => params[:user_id]}
     ])
 
     respond_to do |format|

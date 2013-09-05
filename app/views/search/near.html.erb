@@ -30,10 +30,10 @@
     <%= f.input :lat, as: :hidden %>
     <%= f.input :lng, as: :hidden %>
     <%= f.input :radius, as: :hidden %>
-    <%= f.input :type, collection: type_collection, required: false, include_blank: 'Any', selected: params[:search][:type] %>
-    <%= f.input :size, collection: size_collection, required: false, include_blank: 'Any', selected: params[:search][:size] %>
-    <%= f.input :min_price, label: 'Min. Price', collection: min_price, required: false, include_blank: 'Any Price', selected: params[:search][:min_price] %>
-    <%= f.input :max_price, label: 'Max. Price', collection: max_price, required: false, include_blank: 'Any Price', selected: params[:search][:max_price] %>
+    <%= f.input :type, collection: type_collection, required: false, include_blank: 'Any', selected: @search_params[:type] %>
+    <%= f.input :size, collection: size_collection, required: false, include_blank: 'Any', selected: @search_params[:size] %>
+    <%= f.input :min_price, label: 'Min. Price', collection: min_price, required: false, include_blank: 'Any Price', selected: @search_params[:min_price] %>
+    <%= f.input :max_price, label: 'Max. Price', collection: max_price, required: false, include_blank: 'Any Price', selected: @search_params[:max_price] %>
     <%= f.submit 'Search' %>
   <% end %>
 </div>
@@ -46,8 +46,27 @@
             }))
             .setView([<%= @location[1] %>, <%= @location[0] %>], 15);
 
+    var unavailableIcon = L.icon({
+        iconUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-unavailable.png',
+        iconRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-unavailable.png',
+        shadowUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+        shadowRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+
     <% @listings.each do |listing| %>
-    L.marker([<%= listing.location[0] %>, <%= listing.location[1] %>]).addTo(map);
+    var options = {};
+    <% if listing.availability_score > 0 %>
+        options = {icon: unavailableIcon};
+    <% end %>
+    L.marker([<%= listing.location[0] %>, <%= listing.location[1] %>], options)
+            .addTo(map)
+            .on('click', function(e) {
+                window.open("<%= listing.url %>");
+            });
     <% end %>
 
     $('form.search').submit(function () {

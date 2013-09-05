@@ -26,7 +26,7 @@ updateAvailability = ->
 
   sendMessage(SEARCH_LISTING_IDS, listingIds, (unavailableListings) ->
     for listing in unavailableListings
-      for id in listing['ids']
+      for id in listing['property_ids']
         cleanedId = id.replace(/\D/g, '')
         if listings.hasOwnProperty(cleanedId)
           setVisiblyUnavailable(listings[cleanedId])

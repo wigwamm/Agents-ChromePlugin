@@ -23,4 +23,8 @@ class FullListing
 
   reverse_geocoded_by :location
   belongs_to :agent
+
+  def url
+    "http://www.rightmove.co.uk/property-to-rent/property-#{self.property_id}.html"
+  end
 end

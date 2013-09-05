@@ -6,7 +6,7 @@ require 'nokogiri'
 require 'mongoid'
 
 # Load the Startup model
-require File.expand_path(File.dirname(__FILE__) + '/../app/models/full_listing')
+require File.expand_path(File.dirname(__FILE__) + '/../app/models/listing')
 require File.expand_path(File.dirname(__FILE__) + '/../app/models/agent')
 Mongoid.load!('../config/mongoid.yml', :crawl)
 
@@ -76,16 +76,18 @@ queue.subscribe(manual_ack: true, block: true) do |delivery_info, properties, ur
     listing_page = Nokogiri::HTML(open(url))
     #puts "didn't fail"
 
-    listing = FullListing.new
+    listing = Listing.new
 
     listing_page.css('#minimapwrapper img').each do |img|
       lat_lng_match = img['src'].match(/(-?\d+\.\d+),(-?\d+\.\d+)/)
       listing.location = [Float(lat_lng_match[1]), Float(lat_lng_match[2])]
     end
 
-    if FullListing.where(property_id: listing_page.css('#propertytype').first.content).count == 0
+    property_id = 'rightmove_' + url.gsub(/\D/, '')
 
-      if FullListing.where(location: listing.location).count > 0
+    if Listing.where(property_ids: property_id).count == 0
+
+      if !listing.location.empty? and Listing.where(location: listing.location).count > 0
         listing.is_duplicate = true
       end
 
@@ -98,7 +100,7 @@ queue.subscribe(manual_ack: true, block: true) do |delivery_info, properties, ur
 
       number = listing_page.css('#branchnumber span.number').first
       listing.number = number.content if number
-      listing.property_id = url.gsub(/\D/, '')
+      listing.property_ids = [property_id]
 
       listing_page.css('.thumbnailimage img').each do |img|
         listing.pictures.push img['src'][0..-17]

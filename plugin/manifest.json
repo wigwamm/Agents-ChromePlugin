@@ -8,7 +8,8 @@
     "permissions": [
         "http://www.rightmove.co.uk/",
         "http://www.zoopla.co.uk/",
-        "http://chromeplugin.herokuapp.com/"
+        "http://chromeplugin.herokuapp.com/",
+        "<all_urls>"
     ],
 
     "content_scripts": [

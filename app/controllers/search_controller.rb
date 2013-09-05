@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def near
-    @listings = FullListing.near([-0.166683, 51.473137], 100, :units => :km).limit(250)
+    @listings = Listing.near([-0.166683, 51.473137], 100, :units => :km).limit(250)
 
     @count = @listings.count
     @location = [-0.167, 51.474]
@@ -8,6 +8,16 @@ class SearchController < ApplicationController
   end
 
   def index
+
+    unless params[:search]
+      @search_params = {}
+      @location = [-0.167, 51.474]
+      @listings = []
+      render 'search/near'
+      return
+    end
+
+    @search_params = params[:search]
 
     filter = {}
 
@@ -49,7 +59,7 @@ class SearchController < ApplicationController
     query_radius = 4
     query_radius = Float(radius) * 0.25 if radius and radius.length > 0
 
-    @listings = FullListing.near(@location, query_radius, units: :km).where(filter).limit(250)
+    @listings = Listing.near(@location, query_radius, units: :km).where(filter).limit(250)
 
     render 'search/near'
   end

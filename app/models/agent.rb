@@ -4,5 +4,5 @@ class Agent
   field :branches, type: Array, default: []
   field :address, type: String
 
-  has_many :full_listings
+  has_many :listings
 end
