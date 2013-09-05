@@ -1,6 +1,6 @@
 <h1>Agents</h1>
 <ul>
   <% @agents.each do |agent| %>
-  <li><%= link_to agent.name, agent_path(agent) %></li>
+  <li><%= link_to agent.name, agent_path(agent) %> (<%= agent.listings.count %>)</li>
   <% end %>
 </ul>
