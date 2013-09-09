@@ -36,10 +36,10 @@ class Scraper
         self.scrape_url(url)
         delivery_info.consumer.cancel
       else
-        @pool.schedule {
+        @pool.schedule do
           self.scrape_url(url)
           @channel.ack(delivery_info.delivery_tag)
-        }
+        end
       end
     end
   end

@@ -110,22 +110,15 @@ queue.subscribe(manual_ack: true, block: true) do |delivery_info, properties, ur
         listing.pictures.push img['src'][0..-17]
       end
 
-      agent_name = listing_page.css('#agentdetails a').first
-      if agent_name
+      agent_details = listing_page.css('#agentdetails a').first
+      if agent_details
+        agent_id = agent_details.gsub(/\D/, '')
+        agent = Agent.where(rightmove_id: agent_id).first
 
-        agent_name_split = agent_name.content.strip.split(/ ?\, /)
-        branch = agent_name_split[1]
-        agent_address = listing_page.css('#branchaddress').first
+        if agent
+          listing.agent = agent
+        end
 
-        listing.agent_name = agent_name.content.strip
-        listing.agent_address = agent_address.content.strip if agent_address
-
-        agent = Agent.where(name: agent_name_split[0]).first_or_create
-        agent.address = agent_address.content.strip if agent_address
-        agent.branches.push branch unless agent.branches.include?(branch)
-
-        agent.save
-        listing.agent = agent
       end
 
       property_type = listing_page.css('#propertytype').first
@@ -151,3 +144,9 @@ at_exit {
   pool.shutdown
   connection.close
 }
+
+require './scraper'
+
+class ListingScraper < Scraper
+
+end

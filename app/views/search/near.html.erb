@@ -84,4 +84,8 @@
         var radius = bounds._southWest.distanceTo(bounds._northEast) / 1000;
         $('#search_radius').val(radius);
     });
+
+
+    var kml = new L.KML('/areas.kml');
+    map.addLayer(kml);
 </script>

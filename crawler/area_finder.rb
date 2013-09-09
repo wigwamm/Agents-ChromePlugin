@@ -90,5 +90,7 @@ class AreaFinder
         return name
       end
     end
+
+    nil
   end
 end

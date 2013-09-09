@@ -13,6 +13,7 @@ class SearchController < ApplicationController
       @search_params = {}
       @location = [-0.167, 51.474]
       @listings = []
+
       render 'search/near'
       return
     end
