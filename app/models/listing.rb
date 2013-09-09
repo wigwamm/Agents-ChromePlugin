@@ -34,7 +34,7 @@ class Listing
   field :is_duplicate, type: Boolean
 
   reverse_geocoded_by :location
-  belongs_to :agent
+  belongs_to :agent, index: true
 
   def url
     "http://www.rightmove.co.uk/property-to-rent/property-#{self.property_ids[0].gsub(/\D/,'')}.html"

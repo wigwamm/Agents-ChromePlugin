@@ -71,7 +71,6 @@ queue.subscribe(manual_ack: true, block: true) do |delivery_info, properties, ur
 
   pool.schedule {
 
-
     #puts "Trying this"
     listing_page = Nokogiri::HTML(open(url))
     #puts "didn't fail"
@@ -85,7 +84,12 @@ queue.subscribe(manual_ack: true, block: true) do |delivery_info, properties, ur
 
     property_id = 'rightmove_' + url.gsub(/\D/, '')
 
-    if Listing.where(property_ids: property_id).count == 0
+    #if Listing.where(property_ids: property_id).count == 0
+
+    existing_listing = Listing.where(property_ids: property_id)
+    if existing_listing.count > 0
+      listing = existing_listing.first
+    end
 
       if !listing.location.empty? and Listing.where(location: listing.location).count > 0
         listing.is_duplicate = true
@@ -132,7 +136,7 @@ queue.subscribe(manual_ack: true, block: true) do |delivery_info, properties, ur
 
       listing.save
 
-    end
+    #end
 
     crawled_counter += 1
     puts crawled_counter

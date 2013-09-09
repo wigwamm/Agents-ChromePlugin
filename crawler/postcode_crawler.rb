@@ -1,3 +1,5 @@
+require './scraper'
+
 require 'bunny'
 require 'nokogiri'
 require 'mechanize'
@@ -16,11 +18,15 @@ queue = channel.queue('links')
 
 districts = []
 
-File.open('postcodes.csv', 'r').each_line do |line|
-  postcode_area = line[0..1]
+#allowed_postcodes_regex = /^(SW|SE|W|NW|WC|N|E|EC)\d+[A-Z]?$/
+allowed_postcodes_regex = /^(SW)\d+[A-Z]?$/
 
-  if postcode_area == 'SW'
-    districts.push line[0..(line.index(',') - 1)]
+File.open('postcodes.csv', 'r').each_line do |line|
+
+  district = line[0..(line.index(',') - 1)]
+
+  if district =~ allowed_postcodes_regex
+    districts.push district
   end
 
 end
@@ -28,7 +34,7 @@ end
 pool = Pool.new(10)
 
 districts.each do |postcode|
-  pool.schedule {
+  #pool.schedule {
     a = Mechanize.new { |agent|
       agent.user_agent_alias = 'Mac Safari'
     }
@@ -38,7 +44,15 @@ districts.each do |postcode|
         search.searchLocation = postcode
       end.submit
 
-      listings = search_result.form_with(id: 'propertySearchCriteria').submit
+      search_form = search_result.form_with(id: 'propertySearchCriteria')
+
+      if search_form
+        listings = search_form.submit
+      else
+        puts 'Invalid page'
+        puts page
+        next
+      end
 
       doc = Nokogiri::HTML(listings.body)
       page_count_element = doc.css('.pagenavigation.pagecount').first
@@ -52,6 +66,8 @@ districts.each do |postcode|
 
       values = CGI::parse(listings.uri.query)
 
+      puts page_count
+
       urls = []
       (0...page_count).each do |i|
         values['index'] = i * 10
@@ -63,11 +79,12 @@ districts.each do |postcode|
 
 
       urls.each do |url|
+        puts 'Scheduled crawl'
         pool.schedule do
 
           listings_doc = Nokogiri::HTML(open(url))
-          #url_counter += 1
-          #puts "#{url_counter}"
+
+          puts 'Opened page'
           listings_doc.css('h2.address.bedrooms a').each do |link|
             puts "http://www.rightmove.co.uk#{link['href']}"
             channel.default_exchange.publish("http://www.rightmove.co.uk#{link['href']}", routing_key: queue.name)
@@ -76,7 +93,7 @@ districts.each do |postcode|
       end
 
     end
-  }
+  #}
 end
 
 sleep(1) until pool.is_done?
@@ -89,3 +106,7 @@ at_exit {
 }
 
 puts Time.now
+
+class PostcodeScraper < Scraper
+
+end

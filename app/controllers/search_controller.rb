@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def near
-    @listings = Listing.near([-0.166683, 51.473137], 100, :units => :km).limit(250)
+    @listings = Listing.near([-0.166683, 51.473137], 100, :units => :km).limit(500)
 
     @count = @listings.count
     @location = [-0.167, 51.474]
@@ -28,6 +28,7 @@ class SearchController < ApplicationController
     lat = params[:search][:lat]
     lng = params[:search][:lng]
     radius = params[:search][:radius]
+    created_at = params[:search][:created_at]
 
     if type and type.length > 0
       filter[:type] = type.downcase
@@ -55,11 +56,14 @@ class SearchController < ApplicationController
       @location = [-0.167, 51.474]
     end
 
+    if created_at and created_at.length > 0 and created_at != '0'
+      filter[:created_at] = {'$gte' => Date.strptime(created_at, '%Y-%m-%d')}
+    end
 
     query_radius = 4
     query_radius = Float(radius) * 0.25 if radius and radius.length > 0
 
-    @listings = Listing.near(@location, query_radius, units: :km).where(filter).limit(250)
+    @listings = Listing.near(@location, query_radius, units: :km).where(filter).limit(500)
 
     render 'search/near'
   end

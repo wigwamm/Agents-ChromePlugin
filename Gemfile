@@ -38,6 +38,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'mongoid'
 gem 'geocoder'
+gem 'georuby'
 
 gem 'bunny'
 gem 'nokogiri'

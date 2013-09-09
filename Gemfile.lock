@@ -46,6 +46,7 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     geocoder (1.1.8)
+    georuby (2.0.0)
     hike (1.2.3)
     http-cookie (1.0.1)
       domain_name (~> 0.5)
@@ -143,6 +144,7 @@ DEPENDENCIES
   bunny
   coffee-rails (~> 3.2.1)
   geocoder
+  georuby
   jquery-rails
   mechanize
   mongoid

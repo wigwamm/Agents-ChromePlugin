@@ -25,6 +25,11 @@
           max_price.push "£#{price} pw"
         end
 
+        created_at_collection = {
+                'Any Time' => 0,
+                'Today' => Date.today,
+                'Yesterday' => Date.yesterday
+        }
 
     %>
     <%= f.input :lat, as: :hidden %>
@@ -34,6 +39,7 @@
     <%= f.input :size, collection: size_collection, required: false, include_blank: 'Any', selected: @search_params[:size] %>
     <%= f.input :min_price, label: 'Min. Price', collection: min_price, required: false, include_blank: 'Any Price', selected: @search_params[:min_price] %>
     <%= f.input :max_price, label: 'Max. Price', collection: max_price, required: false, include_blank: 'Any Price', selected: @search_params[:max_price] %>
+    <%= f.input :created_at, label: 'Added ', collection: created_at_collection, as: :radio, checked: @search_params[:created_at] || 0, required: false %>
     <%= f.submit 'Search' %>
   <% end %>
 </div>
