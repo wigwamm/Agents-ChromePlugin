@@ -7,5 +7,7 @@ class Agent
   field :location, type: Array
   field :rightmove_id
 
+  field :url
+
   has_many :listings
 end

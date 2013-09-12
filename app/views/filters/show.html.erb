@@ -1,0 +1,108 @@
+<div id='map'></div>
+<script type='text/javascript'>
+    var map = L.mapbox.map('map')
+            .addLayer(L.mapbox.tileLayer('zanfa.map-eew6jiv6', {
+                detectRetina: true,
+                retinaVersion: 'zanfa.map-qpz94u34'
+            }))
+            .setView([<%= @location[1] %>, <%= @location[0] %>], 15);
+
+    var unavailableIcon = L.icon({
+        iconUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-unavailable.png',
+        iconRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-unavailable.png',
+        shadowUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+        shadowRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+
+    var agentIcon = L.icon({
+        iconUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-agent.png',
+        iconRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-agent.png',
+        shadowUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+        shadowRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+
+    <% @listings.each do |listing| %>
+    var options = {};
+    <% if listing.availability_score > 0 %>
+    options = {icon: unavailableIcon};
+    <% end %>
+    L.marker([<%= listing.location[0] %>, <%= listing.location[1] %>], options)
+            .addTo(map)
+            .on('click', function(e) {
+                window.open("<%= listing.url %>");
+            });
+    <% end %>
+
+    <% @agents.each do |agent| %>
+    options = {icon: agentIcon};
+    L.marker([<%= agent.location[0] %>, <%= agent.location[1] %>], options)
+            .addTo(map);
+    <% end %>
+
+    var polygon = L.polygon(<%= @area.to_json %>).addTo(map);
+    <% unless @filter.edited %>
+    polygon.editing.enable();
+    <% end %>
+
+    //var kml = new L.KML('/areas.kml');
+    //var layer = map.addLayer(kml);
+</script>
+
+
+<div class="edit">
+  <a href="#">Save</a>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @filter.name %>
+</p>
+
+<p>
+  <b>Areas:</b>
+  <%= @filter.areas %>
+</p>
+
+<p>
+  <b>Agents:</b>
+  <%= @filter.agents %>
+</p>
+
+<p>
+  <b>Min price:</b>
+  <%= @filter.min_price %>
+</p>
+
+<p>
+  <b>Max price:</b>
+  <%= @filter.max_price %>
+</p>
+
+<p>
+  <b>Min bedrooms:</b>
+  <%= @filter.min_bedrooms %>
+</p>
+
+<p>
+  <b>Max bedrooms:</b>
+  <%= @filter.max_bedrooms %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @filter.type %>
+</p>
+
+
+<%= link_to 'Edit', edit_filter_path(@filter) %> |
+<%= link_to 'Back', filters_path %>

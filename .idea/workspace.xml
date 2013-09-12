@@ -14,10 +14,10 @@
     <file path="/background.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377776757192" ignored="false" />
     <file path="/popup.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375652629970" ignored="false" />
     <file path="/manifest.json" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375647814856" ignored="false" />
-    <file path="/listing.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378723990376" ignored="false" />
+    <file path="/listing.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378899094017" ignored="false" />
     <file path="/listings_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378376791313" ignored="false" />
-    <file path="/index.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378465985327" ignored="false" />
-    <file path="/routes.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378302148769" ignored="false" />
+    <file path="/index.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378909320339" ignored="false" />
+    <file path="/routes.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379002837788" ignored="false" />
     <file path="/mongoid.yml" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377874927137" ignored="false" />
     <file path="/_constants.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377689002136" ignored="false" />
     <file path="/zoopla.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377622527420" ignored="false" />
@@ -34,27 +34,51 @@
     <file path="/_background_api_calls.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378383021381" ignored="false" />
     <file path="/access_control.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377786303698" ignored="false" />
     <file path="/zoopla_bookmark.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377786675364" ignored="false" />
-    <file path="/fragment.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378734057607" ignored="false" />
-    <file path="/listing_crawler.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378737223622" ignored="false" />
-    <file path="/postcode_crawler.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378733885929" ignored="false" />
+    <file path="/fragment.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378933743096" ignored="false" />
+    <file path="/listing_crawler.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378898852496" ignored="false" />
+    <file path="/postcode_crawler.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378812526437" ignored="false" />
     <file path="/thread-pool.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377873063145" ignored="false" />
     <file path="/full_listing.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378376086453" ignored="false" />
     <file path="$PROJECT_DIR$/../Startups/app/controllers/startups_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377876330164" ignored="false" />
-    <file path="/near.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378735853375" ignored="false" />
-    <file path="/search_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378736360590" ignored="false" />
+    <file path="/near.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378831954817" ignored="false" />
+    <file path="/search_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378829212094" ignored="false" />
     <file path="/search.css.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378301280764" ignored="false" />
     <file path="/application.css" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378207384475" ignored="false" />
-    <file path="/agent.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378726035274" ignored="false" />
+    <file path="/agent.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378744689958" ignored="false" />
     <file path="/agents_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378465499485" ignored="false" />
-    <file path="/show.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378398250609" ignored="false" />
+    <file path="/show.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379003188123" ignored="false" />
     <file path="/kml_test.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378724908563" ignored="false" />
     <file path="$PROJECT_DIR$/../PhotatoRails/service/calendar_test.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378676709026" ignored="false" />
     <file path="/calendar_test.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378676709026" ignored="false" />
-    <file path="/agent_crawler.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378734750880" ignored="false" />
-    <file path="/temp.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378723476408" ignored="false" />
-    <file path="/agent_scraper.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378726099299" ignored="false" />
-    <file path="/agent_postcode_scraper.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378732114107" ignored="false" />
-    <file path="/area_finder.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378734730261" ignored="false" />
+    <file path="/agent_crawler.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378738542753" ignored="false" />
+    <file path="/temp.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379000142295" ignored="false" />
+    <file path="/agent_scraper.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378910758873" ignored="false" />
+    <file path="/agent_postcode_scraper.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378812170001" ignored="false" />
+    <file path="/area_finder.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379000708115" ignored="false" />
+    <file path="/scraper.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378739775196" ignored="false" />
+    <file path="/geocoder.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378895514255" ignored="false" />
+    <file path="/_form.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934813826" ignored="false" />
+    <file path="/application_helper.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379000958821" ignored="false" />
+    <file path="/_areas_field.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379001815104" ignored="false" />
+    <file path="/filter.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379002345270" ignored="false" />
+    <file path="/filters_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379003659384" ignored="false" />
+    <file path="/_agents_field.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378914768766" ignored="false" />
+    <file path="/filters.js.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379004029110" ignored="false" />
+    <file path="$PROJECT_DIR$/../PhotatoRails/service/email_test.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934096219" ignored="false" />
+    <file path="/email_test.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934096219" ignored="false" />
+    <file path="$PROJECT_DIR$/../PhotatoRails/app/models/email.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378933587011" ignored="false" />
+    <file path="/email.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378933587011" ignored="false" />
+    <file path="$PROJECT_DIR$/../PhotatoRails/app/views/contacts/show.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934462292" ignored="false" />
+    <file path="$PROJECT_DIR$/../PhotatoRails/app/helpers/application_helper.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934755810" ignored="false" />
+    <file path="$PROJECT_DIR$/../PhotatoRails/app/views/contacts/_tag_field.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934693899" ignored="false" />
+    <file path="/_tag_field.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934894881" ignored="false" />
+    <file path="$PROJECT_DIR$/../PhotatoRails/app/views/contacts/_form.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934834286" ignored="false" />
+    <file path="$PROJECT_DIR$/../PhotatoRails/app/assets/javascripts/contacts.js.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934762105" ignored="false" />
+    <file path="$PROJECT_DIR$/../PhotatoRails/app/views/contacts/_tags_field.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934956874" ignored="false" />
+    <file path="/contacts_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934925553" ignored="false" />
+    <file path="$PROJECT_DIR$/../PhotatoRails/app/controllers/contacts_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934927921" ignored="false" />
+    <file path="/area.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379001826906" ignored="false" />
+    <file path="/filters.css.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379002491916" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,10 +98,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="listing_crawler.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/crawler/listing_crawler.rb">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/filters/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="19" selection-start="1783" selection-end="3572" vertical-scroll-proportion="0.38506588">
+            <state line="53" column="0" selection-start="2112" selection-end="2112" vertical-scroll-proportion="0.2154088">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filters.css.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/filters.css.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="31" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filters.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/filters.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="29" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="12" selection-start="109" selection-end="116" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filters_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/filters_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="112" column="0" selection-start="2801" selection-end="2801" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -93,22 +153,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/agents_controller.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/crawler/areas.kml" />
-        <option value="$PROJECT_DIR$/crawler/crawler.rb" />
-        <option value="$PROJECT_DIR$/crawler/agent_crawler.rb" />
         <option value="$PROJECT_DIR$/app/models/listing.rb" />
-        <option value="$PROJECT_DIR$/crawler/kml_test.rb" />
-        <option value="$PROJECT_DIR$/app/models/agent.rb" />
-        <option value="$PROJECT_DIR$/crawler/scraper.rb" />
-        <option value="$PROJECT_DIR$/crawler/agent_postcode_scraper.rb" />
-        <option value="$PROJECT_DIR$/crawler/postcode_crawler.rb" />
-        <option value="$PROJECT_DIR$/crawler/area_finder.rb" />
+        <option value="$PROJECT_DIR$/app/views/filters/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/filters/_form.html.erb" />
         <option value="$PROJECT_DIR$/crawler/agent_scraper.rb" />
-        <option value="$PROJECT_DIR$/app/views/search/near.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/search_controller.rb" />
         <option value="$PROJECT_DIR$/crawler/listing_crawler.rb" />
+        <option value="$PROJECT_DIR$/app/views/filters/_agents_field.html.erb" />
+        <option value="$PROJECT_DIR$/crawler/area_finder.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
+        <option value="$PROJECT_DIR$/app/models/area.rb" />
+        <option value="$PROJECT_DIR$/app/views/filters/_areas_field.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/filter.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/filters.css.scss" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/filters_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/filters.js.coffee" />
+        <option value="$PROJECT_DIR$/app/views/filters/show.html.erb" />
       </list>
     </option>
   </component>
@@ -120,9 +180,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="506" />
+    <option name="x" value="461" />
     <option name="y" value="22" />
-    <option name="width" value="935" />
+    <option name="width" value="977" />
     <option name="height" value="821" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -151,8 +211,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -195,7 +255,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
+              <option name="myItemId" value="crawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -209,7 +269,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="crawler" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -271,7 +331,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="agents" />
+              <option name="myItemId" value="filters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -342,6 +402,10 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -365,6 +429,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChromePlugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChromePlugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -372,19 +454,19 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/crawler" />
+    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/crawler" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/plugin" />
       <recent name="$PROJECT_DIR$/app/assets/javascripts" />
+      <recent name="$PROJECT_DIR$/plugin" />
       <recent name="$PROJECT_DIR$/crawler" />
       <recent name="$PROJECT_DIR$/plugin/css" />
       <recent name="$PROJECT_DIR$/plugin/static" />
@@ -556,6 +638,13 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
       <JSDebuggerConfigurationSettings>
         <option name="engineId" value="embedded" />
@@ -671,7 +760,7 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Postcode Crawler" type="RubyRunConfigurationType" factoryName="Ruby">
+    <configuration default="false" name="Postcode Scraper" type="RubyRunConfigurationType" factoryName="Ruby">
       <module name="ChromePlugin" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/crawler" />
@@ -695,7 +784,7 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Listing Crawler" type="RubyRunConfigurationType" factoryName="Ruby">
+    <configuration default="false" name="Listing Scraper" type="RubyRunConfigurationType" factoryName="Ruby">
       <module name="ChromePlugin" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/crawler" />
@@ -719,7 +808,7 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="KML Test" type="RubyRunConfigurationType" factoryName="Ruby">
+    <configuration default="false" name="AreaFinder " type="RubyRunConfigurationType" factoryName="Ruby">
       <module name="ChromePlugin" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/crawler" />
@@ -743,7 +832,7 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="Agent Crawler" type="RubyRunConfigurationType" factoryName="Ruby">
+    <configuration default="false" name="Agent Scraper" type="RubyRunConfigurationType" factoryName="Ruby">
       <module name="ChromePlugin" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
       <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/crawler" />
@@ -796,10 +885,10 @@
       <item index="1" class="java.lang.String" itemvalue="Rails.Development: ChromePlugin" />
       <item index="2" class="java.lang.String" itemvalue="Rake.test" />
       <item index="3" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="4" class="java.lang.String" itemvalue="Ruby.Postcode Crawler" />
-      <item index="5" class="java.lang.String" itemvalue="Ruby.Listing Crawler" />
-      <item index="6" class="java.lang.String" itemvalue="Ruby.KML Test" />
-      <item index="7" class="java.lang.String" itemvalue="Ruby.Agent Crawler" />
+      <item index="4" class="java.lang.String" itemvalue="Ruby.Postcode Scraper" />
+      <item index="5" class="java.lang.String" itemvalue="Ruby.Listing Scraper" />
+      <item index="6" class="java.lang.String" itemvalue="Ruby.AreaFinder " />
+      <item index="7" class="java.lang.String" itemvalue="Ruby.Agent Scraper" />
       <item index="8" class="java.lang.String" itemvalue="Ruby.Agent Postcode Scraper" />
     </list>
   </component>
@@ -833,7 +922,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="506" y="22" width="935" height="821" extended-state="0" />
+    <frame x="461" y="22" width="977" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -847,8 +936,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2992126" sideWeight="0.6754144" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32458565" sideWeight="0.778022" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3190118" sideWeight="0.59116024" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4088398" sideWeight="0.778022" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -919,123 +1008,138 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/crawler/agent_scraper.rb</url>
-          <line>39</line>
-          <option name="timeStamp" value="69" />
+          <url>file://$PROJECT_DIR$/crawler/postcode_crawler.rb</url>
+          <line>26</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/crawler/postcode_crawler.rb</url>
+          <line>20</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/models/listing.rb</url>
+          <line>48</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file:///usr/local/rvm/gems/ruby-1.9.3-p392/gems/actionpack-3.2.12/lib/action_view/helpers/form_options_helper.rb</url>
+          <line>630</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="70" />
+      <option name="time" value="88" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="13" selection-start="824" selection-end="824" vertical-scroll-proportion="0.7844828">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p392/gems/geocoder-1.1.8/lib/geocoder/models/base.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/leaflet.draw.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p392/gems/geocoder-1.1.8/lib/geocoder/models/mongoid.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/listing.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="43" selection-start="641" selection-end="641" vertical-scroll-proportion="0.20705882">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/agent.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/postcode_crawler.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="73" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.33035713">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/agent_postcode_scraper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="21" selection-start="739" selection-end="739" vertical-scroll-proportion="0.6746204">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/scraper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.3325893">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/area_finder.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="7" selection-start="2152" selection-end="2152" vertical-scroll-proportion="1.1160715">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/areas.kml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="46" selection-start="776" selection-end="776" vertical-scroll-proportion="0.6">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/KML.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.03529412">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crawler/agent_scraper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="28" selection-start="793" selection-end="793" vertical-scroll-proportion="0.49411765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/search/near.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="7" selection-start="2698" selection-end="2698" vertical-scroll-proportion="0.2892768">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="46" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
+        <state line="19" column="44" selection-start="476" selection-end="476" vertical-scroll-proportion="0.4172767">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/listings_controller.rb">
+    <entry file="file://$PROJECT_DIR$/crawler/postcode_crawler.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="98" column="48" selection-start="2281" selection-end="2281" vertical-scroll-proportion="3.543956">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crawler/listing_crawler.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="19" selection-start="1783" selection-end="3572" vertical-scroll-proportion="0.38506588">
+        <state line="17" column="53" selection-start="533" selection-end="533" vertical-scroll-proportion="-4.162088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/scraper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="57" selection-start="1359" selection-end="1563" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawler/area_finder.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="31" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="27" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/filters/_areas_field.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="85" selection-start="85" selection-end="85" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/area.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="28" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/filter.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="12" selection-start="109" selection-end="116" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/filters.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="31" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/filters_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="0" selection-start="2801" selection-end="2801" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/filters.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="29" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/filters/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="2112" selection-end="2112" vertical-scroll-proportion="0.2154088">
           <folding />
         </state>
       </provider>

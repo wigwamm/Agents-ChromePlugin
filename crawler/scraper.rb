@@ -37,10 +37,17 @@ class Scraper
         delivery_info.consumer.cancel
       else
         @pool.schedule do
-          self.scrape_url(url)
+          begin
+            self.scrape_url(url)
+
+          rescue e
+            puts 'Exception'
+            puts e
+          end
           @channel.ack(delivery_info.delivery_tag)
         end
       end
+
     end
   end
 

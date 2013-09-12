@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  areas: 
+  agents: 
+  min_price: MyString
+  max_price: MyString
+  min_bedrooms: MyString
+  max_bedrooms: MyString
+  type: 
+
+two:
+  name: MyString
+  areas: 
+  agents: 
+  min_price: MyString
+  max_price: MyString
+  min_bedrooms: MyString
+  max_bedrooms: MyString
+  type: 

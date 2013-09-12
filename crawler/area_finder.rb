@@ -1,4 +1,10 @@
 require 'nokogiri'
+require 'singleton'
+
+require 'mongoid'
+
+require File.expand_path(File.dirname(__FILE__) + '/../app/models/area')
+Mongoid.load!('../config/mongoid.yml', :crawl)
 
 class Point
   def initialize(lng, lat)
@@ -9,7 +15,7 @@ class Point
   attr_reader :x, :y
 end
 
-class Area
+class KMLArea
   def initialize(points)
     @points = points
   end
@@ -20,6 +26,10 @@ class Area
 
   def size
     @points.size
+  end
+
+  def points
+    @points
   end
 
   def contains_point?(point)
@@ -50,9 +60,13 @@ class Area
     (point.x < (trailing_point_on_polygon.x - a_point_on_polygon.x) * (point.y - a_point_on_polygon.y) /
         (trailing_point_on_polygon.y - a_point_on_polygon.y) + a_point_on_polygon.x)
   end
+
 end
 
 class AreaFinder
+
+  include Singleton
+
   def initialize
     @areas = {}
 
@@ -60,11 +74,14 @@ class AreaFinder
   end
 
   def load_areas
-    doc = Nokogiri::XML(File.open('areas.kml'))
+    doc = Nokogiri::XML(File.open(File.expand_path(File.dirname(__FILE__) + '/areas.kml')))
     doc.css('Folder').each do |area|
 
       coordinates = area.css('coordinates').first.content
       name = area.css('name').first.content
+
+      next if name.start_with? 'Feature'
+
       points = []
 
       coordinates.split(/\n/).each do |line|
@@ -79,7 +96,7 @@ class AreaFinder
         end
       end
 
-      @areas[name] = Area.new(points)
+      @areas[name] = KMLArea.new(points)
 
     end
   end
@@ -92,5 +109,32 @@ class AreaFinder
     end
 
     nil
+  end
+
+  def areas
+    areas = []
+    @areas.each do |area, points|
+      areas.push area
+    end
+
+    areas
+  end
+
+  def areas_with_points
+    @areas
+  end
+end
+
+if __FILE__ == $0
+  AreaFinder.instance.areas_with_points.each do |name, kml_area|
+    lat_lng_points = []
+    kml_area.points.each do |point|
+      lat_lng_points.push [point.y, point.x]
+    end
+
+    area = Area.where(name: name).first_or_create
+    area.points = lat_lng_points
+    area.save
+
   end
 end

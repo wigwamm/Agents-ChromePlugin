@@ -5,6 +5,10 @@ class AgentPostcodeScraper < PostcodeScraper
 
   def initialize
     super('agent_list')
+
+    @allowed_postcodes_regex = /^(SW|SE|W|NW|WC|N|E|EC)\d+[A-Z]?$/
+    #@allowed_postcodes_regex = /^(SW3)$/
+    @items_per_page = 20
   end
 
   def fill_form(mechanize, postcode)
@@ -19,7 +23,7 @@ class AgentPostcodeScraper < PostcodeScraper
 
   def scrape(url, document)
     document.css('h2.branchname a').each do |link|
-      #puts "http://www.rightmove.co.uk#{link['href']}"
+      puts "http://www.rightmove.co.uk#{link['href']}"
       @channel.default_exchange.publish("http://www.rightmove.co.uk#{link['href']}", routing_key: @queue.name)
     end
   end
@@ -28,3 +32,6 @@ end
 
 scraper = AgentPostcodeScraper.new
 scraper.run
+while true
+  sleep(1)
+end

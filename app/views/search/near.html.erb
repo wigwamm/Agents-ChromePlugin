@@ -63,6 +63,17 @@
         shadowSize: [41, 41]
     });
 
+    var agentIcon = L.icon({
+        iconUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-agent.png',
+        iconRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-agent.png',
+        shadowUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+        shadowRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+
     <% @listings.each do |listing| %>
     var options = {};
     <% if listing.availability_score > 0 %>
@@ -73,6 +84,12 @@
             .on('click', function(e) {
                 window.open("<%= listing.url %>");
             });
+    <% end %>
+
+    <% @agents.each do |agent| %>
+        options = {icon: agentIcon};
+    L.marker([<%= agent.location[0] %>, <%= agent.location[1] %>], options)
+            .addTo(map);
     <% end %>
 
     $('form.search').submit(function () {
@@ -87,5 +104,5 @@
 
 
     var kml = new L.KML('/areas.kml');
-    map.addLayer(kml);
+    var layer = map.addLayer(kml);
 </script>

@@ -1,12 +1,13 @@
 require './scraper'
 require './area_finder'
 
+require 'geocoder'
+require File.expand_path(File.dirname(__FILE__) + '/../config/initializers/geocoder')
+
 class AgentScraper < Scraper
 
   def initialize
     super('agent_list')
-
-    @area_finder = AreaFinder.new
   end
 
   def scrape(url, document)
@@ -18,31 +19,36 @@ class AgentScraper < Scraper
     }
 
     name = document.css('#pageheader h1').first.content.strip
-    address = document.css('.address').first.content.strip.encode(Encoding.find('ASCII'), encoding_options)
+    address = document.css('.address').first
+    if address
+      address = address.content.strip.encode(Encoding.find('ASCII'), encoding_options)
+
+      sleep(1 + Random.rand(2)) unless @debug
+      location_lookup = Geocoder.search(address)
+
+      return if location_lookup.to_a.empty?
+
+      location = location_lookup[0].coordinates
+
+      point = Point.new(location[1], location[0])
+      area = AreaFinder.instance.find_area(point)
+    end
+
     id = url.gsub(/\D+/, '')
 
-    sleep(1 + Random.rand(5)) unless @debug
-    location_lookup = Geocoder.search(address)
-
-    return if location_lookup.to_a.empty?
-
-    location = location_lookup[0].coordinates
-
-    point = Point.new(location[1], location[0])
-    area = @area_finder.find_area(point)
-
     agent = Agent.where(rightmove_id: id).first_or_create
-    agent.rightmove_id = id
+    agent.url = url
     agent.name = name
-    agent.address = address
-    agent.location = location
-    agent.area = area
+    agent.address = address if address
+    agent.location = location if location
+    agent.area = area if area
+
     agent.save
   end
 
 end
 
 scraper = AgentScraper.new
-scraper.debug = true
-#scraper.run
-scraper.scrape_url('http://www.rightmove.co.uk/estate-agents/agent/Beckley-Group/London-97328.html')
+#scraper.debug = true
+scraper.run
+#scraper.scrape_url('http://www.rightmove.co.uk/estate-agents/agent/Citystyle-Living-Ltd/London-76429.html')

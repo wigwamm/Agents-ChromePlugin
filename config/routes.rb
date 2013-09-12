@@ -1,6 +1,13 @@
 ChromePlugin::Application.routes.draw do
-  get "agents/index"
+  resources :filters do
+    member do
+      get 'clone'
+      post 'polygon'
+    end
+  end
 
+
+  get 'agents' => 'agents#index'
   get 'agents/:id' => 'agents#show', as:'agent'
 
   get 'search/near'

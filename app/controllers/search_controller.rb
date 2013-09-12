@@ -12,7 +12,8 @@ class SearchController < ApplicationController
     unless params[:search]
       @search_params = {}
       @location = [-0.167, 51.474]
-      @listings = []
+      @listings = Listing.where(:area.in => ['Battersea'])
+      @agents = Agent.where(:area.in => ['Battersea'])
 
       render 'search/near'
       return

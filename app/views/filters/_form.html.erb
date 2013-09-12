@@ -1,0 +1,20 @@
+<%= simple_form_for(@filter) do |f| %>
+    <%= f.input :name %><br />
+    <%= f.label :areas %><br />
+    <% @filter.areas.each do |area| %>
+        <%= render 'areas_field', f: f, value: area, association: :areas %>
+    <% end %>
+    <%= link_to_add_fields 'Add Area', f, :areas %> <br/>
+    <%= f.label :agents %><br />
+    <% @filter.agents.each do |agent| %>
+        <%= render 'agent_field', f: f, value: agent, association: :agents %>
+    <% end %>
+    <%= link_to_add_fields 'Add Agents', f, :agents %>
+    <%= f.input :min_price %><br />
+    <%= f.input :max_price %><br />
+    <%= f.input :min_bedrooms %><br />
+    <%= f.input :max_bedrooms %><br />
+    <%= f.input :type %><br />
+    <%= f.input :include_markers_for, as: :radio, collection: Filter.include_markers_for_options, default: 0 %>
+    <%= f.submit %>
+<% end %>

@@ -9,6 +9,7 @@ class PostcodeScraper < Scraper
     #@allowed_postcodes_regex = /^(SW|SE|W|NW|WC|N|E|EC)\d+[A-Z]?$/
     @allowed_postcodes_regex = /^(SW)\d+[A-Z]?$/
     @districts = []
+    @items_per_page = 10
 
   end
 
@@ -70,7 +71,7 @@ class PostcodeScraper < Scraper
 
     urls = []
     (0...page_count).each do |i|
-      values['index'] = i * 10
+      values['index'] = i * @items_per_page
       page.uri.query = URI.encode_www_form(values)
 
       urls.push page.uri.to_s
@@ -78,19 +79,31 @@ class PostcodeScraper < Scraper
 
     urls.each do |url|
       @pool.schedule do
-        scrape(url, Nokogiri::HTML(open(url)))
+        begin
+          #puts "Scraping #{url}"
+          scrape(url, Nokogiri::HTML(open(url)))
+        rescue e
+          puts 'Exception'
+          puts e
+        end
       end
     end
   end
 
   def scrape(url, document)
     document.css('h2.address.bedrooms a').each do |link|
-      #puts "http://www.rightmove.co.uk#{link['href']}"
+      puts "http://www.rightmove.co.uk#{link['href']}"
       @channel.default_exchange.publish("http://www.rightmove.co.uk#{link['href']}", routing_key: @queue.name)
     end
   end
 
 end
 
-#scraper = PostcodeScraper.new
-#scraper.run
+if __FILE__ == $0
+  scraper = PostcodeScraper.new
+  scraper.run
+
+  while true
+    sleep(1)
+  end
+end
