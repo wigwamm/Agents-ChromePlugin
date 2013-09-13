@@ -35,7 +35,16 @@ class FiltersController < ApplicationController
     end
 
     if @filter.edited && (@filter.include_markers_for == 0 || @filter.include_markers_for == 2)
-      @agents = Agent.where(:area.in => @filter.areas)
+      @agents = Agent.where(location: {
+          '$geoWithin' => {
+              '$geometry' => {
+                  type: 'Polygon',
+                  coordinates: [
+                      @filter.polygon
+                  ]
+              }
+          }
+      })
     else
       @agents = []
     end
@@ -79,8 +88,10 @@ class FiltersController < ApplicationController
   # POST /filters.json
   def create
     @filter = Filter.new(params[:filter])
-    @area = Area.where(name: @filter.areas[0]).first
+    @area = Area.where(name: @filter.area).first
     @filter.polygon = @area.points
+
+    @filter.name = "#{@area.name} Listings"
 
     respond_to do |format|
       if @filter.save

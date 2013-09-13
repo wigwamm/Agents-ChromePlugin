@@ -11,7 +11,7 @@ jQuery ->
     $(this).parent().remove()
     event.preventDefault()
 
-  $('.edit a').click (event) ->
+  $('a.edit').click (event) ->
     coordinates = []
     latLngs = polygon._latlngs
     for latLng in latLngs

@@ -1,5 +1,20 @@
-<h1>New filter</h1>
+<div class="filters">
+  <div class="background">
+    <div class="background-image">
+      <img src="<%= asset_path 'background.jpg' %>">
+    </div>
+    <div class="search-box">
+      <h1>Specify an area</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', filters_path %>
+      <%= simple_form_for(Filter.new) do |f| %>
+          <%= f.text_field :area, placeholder: 'Type in an area and hit enter' %>
+      <% end %>
+      <script>
+              var availableTags = <%= raw Area.as_array.to_json %>;
+              $( "#filter_area" ).autocomplete({
+                  source: availableTags
+              });
+      </script>
+    </div>
+  </div>
+</div>

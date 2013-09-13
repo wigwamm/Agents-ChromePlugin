@@ -1,108 +1,122 @@
-<div id='map'></div>
-<script type='text/javascript'>
-    var map = L.mapbox.map('map')
-            .addLayer(L.mapbox.tileLayer('zanfa.map-eew6jiv6', {
-                detectRetina: true,
-                retinaVersion: 'zanfa.map-qpz94u34'
-            }))
-            .setView([<%= @location[1] %>, <%= @location[0] %>], 15);
+<div class="filters">
+  <div class="wrapper">
+    <div class="header">
+      <div class="menu">
+        <h2><%= @filter.name %></h2>
+      </div>
+    </div>
+    <div class="content">
+      <div class="map-wrapper">
+        <div id="map"></div>
+        <div id="sidebar" class="sidebar">
+          <h2>Agents in this area</h2>
+          <ul>
+            <% @agents.each do |agent| %>
+                <li data-agent="<%= agent.id %>"><%= agent.name %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script type='text/javascript'>
+        var map = L.mapbox.map('map', null, {
+                    zoomControl: false
+                })
+                .addLayer(L.mapbox.tileLayer('zanfa.map-eew6jiv6', {
+                    detectRetina: true,
+                    retinaVersion: 'zanfa.map-qpz94u34'
+                }))
+                .setView([<%= @location[1] %>, <%= @location[0] %>], 15);
 
-    var unavailableIcon = L.icon({
-        iconUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-unavailable.png',
-        iconRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-unavailable.png',
-        shadowUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
-        shadowRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]
-    });
+        var agents = <%= raw @agents.to_json %>;
+        var listings = [];
 
-    var agentIcon = L.icon({
-        iconUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-agent.png',
-        iconRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-agent.png',
-        shadowUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
-        shadowRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41]
-    });
+        function markersNotByAgent(agentId, apply) {
+//            var otherListings = [];
+            for (var i = 0, len = listings.length; i < len; i++) {
+                if (listings[i].agent_id !== agentId)
+                    apply(listings[i]);
+            }
 
-    <% @listings.each do |listing| %>
-    var options = {};
-    <% if listing.availability_score > 0 %>
-    options = {icon: unavailableIcon};
-    <% end %>
-    L.marker([<%= listing.location[0] %>, <%= listing.location[1] %>], options)
-            .addTo(map)
-            .on('click', function(e) {
-                window.open("<%= listing.url %>");
+            for (i = 0, len = agents.length; i < len; i++) {
+                if (agents[i]._id !== agentId)
+                    apply(agents[i]);
+            }
+
+//            return otherListings;
+        }
+
+        var unavailableIcon = L.icon({
+            iconUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-unavailable.png',
+            iconRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-unavailable.png',
+            shadowUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+            shadowRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        var agentIcon = L.icon({
+            iconUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-agent.png',
+            iconRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-agent.png',
+            shadowUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+            shadowRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        <% @listings.each do |listing| %>
+        var options = {};
+        <% if listing.availability_score > 0 %>
+        options = {icon: unavailableIcon};
+        <% end %>
+        var listing = <%= raw listing.to_json %>;
+        listing.marker = L.marker([<%= listing.location[0] %>, <%= listing.location[1] %>], options)
+                .addTo(map)
+                .on('click', function(e) {
+                    window.open("<%= listing.url %>");
+                });
+        listings.push(listing);
+        <% end %>
+
+        <% @agents.each_with_index do |agent, i| %>
+        options = {icon: agentIcon};
+        agents[<%= i %>].marker = L.marker([<%= agent.location[0] %>, <%= agent.location[1] %>], options)
+                .addTo(map);
+        <% end %>
+
+        var polygon = L.polygon(<%= @area.to_json %>).addTo(map);
+        <% unless @filter.edited %>
+        polygon.editing.enable();
+        <% end %>
+
+        //var kml = new L.KML('/areas.kml');
+        //var layer = map.addLayer(kml);
+
+        <% if @filter.edited %>
+        $(function(){
+            $('a.edit').hide();
+            $('.sidebar').show();
+
+            $('li[data-agent]').hover(function() {
+                var t = $(this);
+                markersNotByAgent(t.data('agent'), function(listing) {
+                    listing.marker.setOpacity(0);
+                });
+            }, function() {
+                var t = $(this);
+                markersNotByAgent(t.data('agent'), function(listing) {
+                    listing.marker.setOpacity(1);
+                });
             });
-    <% end %>
+        });
 
-    <% @agents.each do |agent| %>
-    options = {icon: agentIcon};
-    L.marker([<%= agent.location[0] %>, <%= agent.location[1] %>], options)
-            .addTo(map);
-    <% end %>
+        <% end %>
+    </script>
 
-    var polygon = L.polygon(<%= @area.to_json %>).addTo(map);
-    <% unless @filter.edited %>
-    polygon.editing.enable();
-    <% end %>
-
-    //var kml = new L.KML('/areas.kml');
-    //var layer = map.addLayer(kml);
-</script>
-
-
-<div class="edit">
-  <a href="#">Save</a>
+    <a class="edit" href="#">Save</a>
+  </div>
 </div>
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @filter.name %>
-</p>
-
-<p>
-  <b>Areas:</b>
-  <%= @filter.areas %>
-</p>
-
-<p>
-  <b>Agents:</b>
-  <%= @filter.agents %>
-</p>
-
-<p>
-  <b>Min price:</b>
-  <%= @filter.min_price %>
-</p>
-
-<p>
-  <b>Max price:</b>
-  <%= @filter.max_price %>
-</p>
-
-<p>
-  <b>Min bedrooms:</b>
-  <%= @filter.min_bedrooms %>
-</p>
-
-<p>
-  <b>Max bedrooms:</b>
-  <%= @filter.max_bedrooms %>
-</p>
-
-<p>
-  <b>Type:</b>
-  <%= @filter.type %>
-</p>
-
-
-<%= link_to 'Edit', edit_filter_path(@filter) %> |
-<%= link_to 'Back', filters_path %>

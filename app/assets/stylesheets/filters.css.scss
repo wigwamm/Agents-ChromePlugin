@@ -2,19 +2,143 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.edit {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: red;
 
-  a {
-    display: inline-block;
-    padding: 20px;
+
+a.edit {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  background: white;
+  display: block;
+  padding: 10px 18px;
+  color: #FD7609;
+  font-size: 20px;
+  text-decoration: none;
+
+  box-shadow: 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.filters {
+
+  height: 100%;
+
+  .wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    .header {
+      background: white;
+      height: 60px;
+      display: table-row;
+    }
+
+    .content {
+      height: 100%;
+      display: table-row;
+    }
+  }
+
+  .map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu {
+    overflow: auto;
+    position: relative;
+    z-index: 1002;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.2);
+    height: 100%;
+
+    h2 {
+      color: #FD7609;
+      margin: 20px 0 0 20px;
+      font-size: 20px;
+    }
+  }
+
+  .background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #ddd;
+  }
+
+  .background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .sidebar {
+    display: none;
+    background: #6D6D6D;
+    position: absolute;
+    height: 100%;
+    width: 300px;
+    top: 0px;
+    right: 0;
+    z-index: 1001;
+    box-shadow: inset 3px 0 rgba(0, 0, 0, 0.2);
     color: white;
-    font-weight: bold;
-    font-size: 30px;
-    text-decoration: none;
-    background: none !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    h2 {
+      font-size: 20px;
+      margin: 20px;
+      text-align: center;
+    }
+
+    ul {
+      margin: 20px;
+      font-size: 16px;
+
+      li {
+        padding-bottom: 10px;
+        cursor: pointer;
+      }
+
+      li:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
+  .search-box {
+    width: 435px;
+    position: relative;
+    margin: 300px auto 0 auto;
+  }
+
+  h1 {
+    color: white;
+    font-size: 50px;
+    margin: 10px 0;
+    text-shadow: 0 2px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+  }
+
+  input {
+    width: 405px;
+    font-size: 15pt;
+    margin-top: 50px;
+    border: 0;
+    outline: none;
+    padding: 15px;
+    color: #222222;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #ccc;
   }
 }

@@ -9,6 +9,7 @@ class Filter
 
   field :name
   field :areas, type: Array, default: []
+  field :area
   field :agents, type: Array, default: []
   field :include_markers_for, type: Integer, default: 0
   field :min_price, type: Integer
