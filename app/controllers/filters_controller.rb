@@ -30,6 +30,11 @@ class FiltersController < ApplicationController
             }
         }
       })
+      @listings_agent_ids = []
+      @listings.each do |listing|
+        @listings_agent_ids.push listing.agent_id
+      end
+      @all_agents = Agent.where(:id.in => @listings_agent_ids)
     else
       @listings = []
     end

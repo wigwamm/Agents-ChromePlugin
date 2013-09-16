@@ -21,3 +21,7 @@ jQuery ->
 
     $.post "#{window.location.pathname}/polygon", {polygon: coordinates}, (result) ->
       window.location.reload()
+
+class Map
+  @init: ->
+
