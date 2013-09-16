@@ -1,4 +1,6 @@
 ChromePlugin::Application.routes.draw do
+  get 'statistics/:area' => 'statistics#average'
+
   resources :filters do
     member do
       get 'clone'
