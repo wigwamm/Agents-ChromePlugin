@@ -37,6 +37,7 @@ class FiltersController < ApplicationController
       @all_agents = Agent.where(:id.in => @listings_agent_ids)
     else
       @listings = []
+      @all_agents = []
     end
 
     if @filter.edited && (@filter.include_markers_for == 0 || @filter.include_markers_for == 2)

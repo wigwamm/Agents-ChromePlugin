@@ -21,129 +21,41 @@
       </div>
     </div>
     <script type='text/javascript'>
-        var map = L.mapbox.map('map', null, {
-                    zoomControl: false
-                })
-                .addLayer(L.mapbox.tileLayer('zanfa.map-eew6jiv6', {
-                    detectRetina: true,
-                    retinaVersion: 'zanfa.map-qpz94u34'
-                }))
-                .setView([<%= @location[1] %>, <%= @location[0] %>], 15);
+        (function () {
+            var listings = <%= raw @listings.to_json %>,
+                all_agents = <%= raw @all_agents.to_json %>,
+                local_agents = <%= raw @agents.to_json %>,
+                location = [<%= @location[1] %>, <%= @location[0] %>],
+                area = <%= raw @area.to_json %>;
 
-        var agents = <%= raw @all_agents.to_json %>;
-        var listings = [];
+            var map = new Map(location, listings, all_agents, local_agents, area);
+            <% unless @filter.edited %>
+                map.editPolygon(true);
+            <% end %>
 
-        function markersNotByAgent(agentId, apply) {
-//            var otherListings = [];
-            for (var i = 0, len = listings.length; i < len; i++) {
-                if (listings[i].agent_id !== agentId)
-                    apply(listings[i]);
-            }
+            <% if @filter.edited %>
+            $(function(){
+                $('a.edit').hide();
+                $('.sidebar').show();
 
-            for (i = 0, len = agents.length; i < len; i++) {
-                if (agents[i]._id !== agentId)
-                    apply(agents[i]);
-            }
-
-//            return otherListings;
-        }
-
-        function listingsByLocation(location) {
-            var sameLocationListings = [], listing;
-
-            for (var i = 0, len = listings.length; i < len; i++) {
-                listing = listings[i];
-                if (listing.location[0] == location[0] && listing.location[1] == location[1])
-                sameLocationListings.push(listing);
-            }
-
-            return sameLocationListings;
-        }
-
-        var unavailableIcon = L.icon({
-            iconUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-unavailable.png',
-            iconRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-unavailable.png',
-            shadowUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
-            shadowRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41]
-        });
-
-        var agentIcon = L.icon({
-            iconUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-agent.png',
-            iconRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-icon-agent.png',
-            shadowUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
-            shadowRetinaUrl: 'https://s3-eu-west-1.amazonaws.com/wigwamm-plugin/marker-shadow.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41]
-        });
-
-        function urlFromListing(listing) {
-            return "http://www.rightmove.co.uk/property-to-rent/property-" + listing.property_ids[0].replace(/\D/g, '') + ".html"
-        }
-
-        <% @listings.each do |listing| %>
-        var options = {};
-        <% if listing.availability_score > 0 %>
-        options = {icon: unavailableIcon};
-        <% end %>
-        var listing = <%= raw listing.to_json %>;
-        listing.marker = L.marker([<%= listing.location[0] %>, <%= listing.location[1] %>], options)
-                .addTo(map)
-                .on('click', function(e) {
-                    var listings = listingsByLocation([<%= listing.location[0] %>, <%= listing.location[1] %>]),
-                        popup_html = '';
-
-                    for (var i = 0; i < listings.length; i++) {
-                        popup_html += "<a href='" + urlFromListing(listings[i]) + "' target='_blank'>" + listings[i].description + "</a><br />";
-                    }
-
-                    var popup = L.popup({offset: new L.Point(1, -20)})
-                            .setLatLng([<%= listing.location[0] %>, <%= listing.location[1] %>])
-                            .setContent(popup_html)
-                            .openOn(map);
-                    //window.open("<%= listing.url %>");
+                $('li[data-agent]').hover(function() {
+                    var t = $(this);
+                    map.markersNotByAgent(t.data('agent'), function(listing) {
+                        if (listing.marker) listing.marker.setOpacity(0);
+                    });
+                }, function() {
+                    var t = $(this);
+                    map.markersNotByAgent(t.data('agent'), function(listing) {
+                        if (listing.marker) listing.marker.setOpacity(1);
+                    });
                 });
-        listings.push(listing);
-        <% end %>
-
-        <% @agents.each_with_index do |agent, i| %>
-        options = {icon: agentIcon};
-        agents[<%= i %>].marker = L.marker([<%= agent.location[0] %>, <%= agent.location[1] %>], options)
-                .addTo(map);
-        <% end %>
-
-        var polygon = L.polygon(<%= @area.to_json %>).addTo(map);
-        <% unless @filter.edited %>
-        polygon.editing.enable();
-        <% end %>
+            });
+            <% end %>
+        })();
 
         //var kml = new L.KML('/areas.kml');
         //var layer = map.addLayer(kml);
 
-        <% if @filter.edited %>
-        $(function(){
-            $('a.edit').hide();
-            $('.sidebar').show();
-
-            $('li[data-agent]').hover(function() {
-                var t = $(this);
-                markersNotByAgent(t.data('agent'), function(listing) {
-                    listing.marker.setOpacity(0);
-                });
-            }, function() {
-                var t = $(this);
-                markersNotByAgent(t.data('agent'), function(listing) {
-                    listing.marker.setOpacity(1);
-                });
-            });
-        });
-
-        <% end %>
     </script>
 
     <a class="edit" href="#">Save</a>

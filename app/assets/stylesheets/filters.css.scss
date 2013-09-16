@@ -141,4 +141,26 @@ a.edit {
   ::-webkit-input-placeholder {
     color: #ccc;
   }
+
+  .leaflet-popup-content {
+    width: 200px;
+    overflow: hidden;
+  }
+
+  .leaflet-popup-content-wrapper {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .popup-listing {
+
+    clear: both;
+
+    img {
+      width: 80px;
+      min-height: 50px;
+      float: left;
+      margin: 5px;
+    }
+  }
 }

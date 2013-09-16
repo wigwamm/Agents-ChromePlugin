@@ -46,7 +46,7 @@
     <file path="/application.css" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378207384475" ignored="false" />
     <file path="/agent.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378744689958" ignored="false" />
     <file path="/agents_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378465499485" ignored="false" />
-    <file path="/show.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379335755219" ignored="false" />
+    <file path="/show.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379339201627" ignored="false" />
     <file path="/kml_test.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378724908563" ignored="false" />
     <file path="$PROJECT_DIR$/../PhotatoRails/service/calendar_test.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378676709026" ignored="false" />
     <file path="/calendar_test.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378676709026" ignored="false" />
@@ -61,9 +61,9 @@
     <file path="/application_helper.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379000958821" ignored="false" />
     <file path="/_areas_field.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379001815104" ignored="false" />
     <file path="/filter.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379076953326" ignored="false" />
-    <file path="/filters_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379328680018" ignored="false" />
+    <file path="/filters_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379339427858" ignored="false" />
     <file path="/_agents_field.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378914768766" ignored="false" />
-    <file path="/filters.js.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379336278544" ignored="false" />
+    <file path="/filters.js.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379343708990" ignored="false" />
     <file path="$PROJECT_DIR$/../PhotatoRails/service/email_test.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934096219" ignored="false" />
     <file path="/email_test.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934096219" ignored="false" />
     <file path="$PROJECT_DIR$/../PhotatoRails/app/models/email.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378933587011" ignored="false" />
@@ -78,7 +78,7 @@
     <file path="/contacts_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934925553" ignored="false" />
     <file path="$PROJECT_DIR$/../PhotatoRails/app/controllers/contacts_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378934927921" ignored="false" />
     <file path="/area.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379001826906" ignored="false" />
-    <file path="/filters.css.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379086425485" ignored="false" />
+    <file path="/filters.css.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379344508820" ignored="false" />
     <file path="/new.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379081208234" ignored="false" />
     <file path="/scaffolds.css.scss" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1379073550833" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -103,16 +103,16 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/filters/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="40" selection-start="3872" selection-end="3872" vertical-scroll-proportion="-61.875">
+            <state line="44" column="41" selection-start="1544" selection-end="1544" vertical-scroll-proportion="-16.875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listing.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/listing.rb">
+      <file leaf-file-name="filters.css.scss" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/filters.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="101" selection-start="1053" selection-end="1150" vertical-scroll-proportion="0.0">
+            <state line="151" column="21" selection-start="2385" selection-end="2385" vertical-scroll-proportion="0.76293105">
               <folding />
             </state>
           </provider>
@@ -121,26 +121,19 @@
       <file leaf-file-name="filters_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/filters_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="62" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0">
+            <state line="94" column="15" selection-start="2217" selection-end="2217" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filters.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/filters.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="15" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filters.js.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="filters.js.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/filters.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="4" selection-start="822" selection-end="822" vertical-scroll-proportion="0.59090906">
-              <folding />
+            <state line="68" column="40" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1379343708000" expanded="true" signature="2010:2197" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,10 +160,10 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/search.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss" />
         <option value="$PROJECT_DIR$/app/views/filters/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/filters.css.scss" />
         <option value="$PROJECT_DIR$/app/controllers/filters_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/filters/show.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/filters.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/filters.css.scss" />
       </list>
     </option>
   </component>
@@ -446,28 +439,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChromePlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChromePlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1057,11 +1028,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/reset.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.9875" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/filters/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1092,12 +1058,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="328" selection-end="328" vertical-scroll-proportion="0.4375" />
+        <state line="19" column="0" selection-start="328" selection-end="328" vertical-scroll-proportion="0.4375">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/filter.rb">
@@ -1109,7 +1079,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/search.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="14" selection-start="362" selection-end="362" vertical-scroll-proportion="0.7875" />
+        <state line="21" column="14" selection-start="362" selection-end="362" vertical-scroll-proportion="0.7875">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
@@ -1128,35 +1100,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/listing.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="101" selection-start="1053" selection-end="1150" vertical-scroll-proportion="0.0">
+        <state line="50" column="31" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.6257576">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin/js/_common.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.021961933">
+          <folding>
+            <marker date="1378385128000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378385128000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/filters_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="62" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0">
+        <state line="94" column="15" selection-start="2217" selection-end="2217" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/filters/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="40" selection-start="3872" selection-end="3872" vertical-scroll-proportion="-61.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/filters.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="15" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0">
+        <state line="44" column="41" selection-start="1544" selection-end="1544" vertical-scroll-proportion="-16.875">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/filters.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="4" selection-start="822" selection-end="822" vertical-scroll-proportion="0.59090906">
+        <state line="68" column="40" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1379343708000" expanded="true" signature="2010:2197" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/filters.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="21" selection-start="2385" selection-end="2385" vertical-scroll-proportion="0.76293105">
           <folding />
         </state>
       </provider>
