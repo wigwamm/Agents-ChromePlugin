@@ -111,10 +111,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="manifest.json" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="14" selection-start="290" selection-end="290" vertical-scroll-proportion="0.47493404">
+            <state line="479" column="105" selection-start="16385" selection-end="16385" vertical-scroll-proportion="0.46721312">
               <folding />
             </state>
           </provider>
@@ -130,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/filters_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/filters/show.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/filters.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/filters.css.scss" />
@@ -146,6 +145,7 @@
         <option value="$PROJECT_DIR$/plugin/css/rightmove.scss" />
         <option value="$PROJECT_DIR$/plugin/js/_background_api_calls.coffee" />
         <option value="$PROJECT_DIR$/plugin/manifest.json" />
+        <option value="$PROJECT_DIR$/public/index.html" />
       </list>
     </option>
   </component>
@@ -217,7 +217,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -808,11 +808,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.rdoc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="11" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.6122449" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugin-website/piechart.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="13" selection-start="233" selection-end="897" vertical-scroll-proportion="0.0" />
@@ -913,7 +908,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="14" selection-start="290" selection-end="290" vertical-scroll-proportion="0.47493404">
+        <state line="14" column="35" selection-start="316" selection-end="316" vertical-scroll-proportion="0.5540897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="479" column="105" selection-start="16385" selection-end="16385" vertical-scroll-proportion="0.46721312">
           <folding />
         </state>
       </provider>
