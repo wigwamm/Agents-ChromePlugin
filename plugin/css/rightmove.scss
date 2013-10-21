@@ -13,6 +13,16 @@
 
   a {
     text-decoration: none;
+
+    svg {
+      position: absolute;
+      fill: #D1D1D1;
+      width: 60px;
+      height: 60px;
+      left: 40px;
+      top: 30px;
+      position: absolute;
+    }
   }
 
 }
@@ -27,13 +37,25 @@
   height: 500px;
 
   a {
+    position: relative;
     text-decoration: none;
   }
 
-  .plugin-button {
-    top: 2px;
-    right: 120px;
-    width: 135px;
+  .plugin-button-wrapper {
+
+    background:white;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 145px;
+    height: 50px;
+    z-index: 1000;
+
+    .plugin-button {
+      right: 5px;
+      width: 135px;
+      top: 5px;
+    }
   }
 
   .plugin-unavailable {
@@ -43,6 +65,16 @@
     span {
       padding-top: 30%;
       font-size: 30px;
+    }
+
+    svg {
+      position: absolute;
+      fill: #D1D1D1;
+      width: 200px;
+      height: 100px;
+      left: 200px;
+      top: 150px;
+      position: absolute;
     }
   }
 }
@@ -62,7 +94,7 @@
   cursor: pointer;
   text-decoration: none !important;
 
-  background: rgba(231, 76, 60, 0.50);
+  background: rgba(0, 0, 0, 0.4);
 
   span {
     color: white;
@@ -85,28 +117,41 @@
 
   cursor: pointer;
 
-  background: #2ecc71;
+  background: #ff5a00;
   border-radius: 3px;
 
   -webkit-touch-callout: none;
   user-select: none;
 
-  transition: background-color 1000ms;
-  -webkit-transition: background-color 1000ms;
+  svg {
+    fill: white;
+    background: #ff5a00;
+    width: 40px;
+  }
 
   span {
     display: block;
+    float: left;
+    margin: 12px 10px 0 20px;
     color: white;
-    padding-top: 9%;
     font-weight: bold;
     font-size: 12px;
     text-align: center;
     text-transform: uppercase;
   }
-}
 
-.plugin-button:active {
-  background: #27ae60;
+  &.unavailable {
+
+    background: #2c3e50 !important;
+
+    span {
+      margin: 12px 5px 0 5px !important;
+    }
+
+    svg {
+      background: #2c3e50;
+    }
+  }
 }
 
 .plugin-loading-bar {
@@ -119,7 +164,7 @@
   width: 100%;
   height: 40px;
 
-  background: #f1c40f;
+  background: #ff5a00;
 
   text-align: center;
 

@@ -1,5 +1,5 @@
-API_URL = "http://localhost:3000"
-#API_URL = "http://chromeplugin.herokuapp.com"
+#API_URL = "http://localhost:3000"
+API_URL = "http://www.wrongmove.co/"
 
 searchListingIds = (data, callback) ->
   
@@ -12,11 +12,11 @@ searchListingIds = (data, callback) ->
     },
     success: (response) ->
       
-      console.log "Success", response
+#      console.log "Success", response
       callback(response)
   , error: (error) ->
       
-      console.log "Error", error
+#      console.log "Error", error
       callback([])
   })
 
@@ -58,10 +58,10 @@ registerUser = (callback) ->
     dataType: 'json',
     contentType: 'application/json',
     success: (response) ->
-      console.log "Success", response
+#      console.log "Success", response
       callback(response)
   , error: (error) ->
-      console.log "Error", error
+#      console.log "Error", error
       callback([])
   })
 

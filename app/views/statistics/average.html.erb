@@ -1,11 +1,6 @@
 
-<% @averages.each_with_index do |average, i| %>
+<% @average.averages.each_with_index do |average, i| %>
     <div>
-    Average for <%= i %> bedrooms is <%= average %>, with quartiles at <%= raw @quartiles[i].to_json %>
-<!--<ul>
-  <% @average_prices[i].sort.each do |price| %>
-  <li><%= price %></li>
-  <% end %>
-</ul>  -->
-      </div>
+    Average for <%= i %> bedrooms is <%= average %>, median is <%= @average.medians[i] %>
+    </div>
 <% end %>

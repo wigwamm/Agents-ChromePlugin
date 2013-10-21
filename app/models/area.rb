@@ -6,6 +6,8 @@ class Area
   field :name
   field :points, type: Array, default: []
 
+  embeds_many :averages
+
   def self.as_array
     if @@area_array.empty?
       Area.all.each do |area|

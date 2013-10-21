@@ -7,8 +7,7 @@
 
     "permissions": [
         "http://www.rightmove.co.uk/",
-        "http://www.zoopla.co.uk/",
-        "http://chromeplugin.herokuapp.com/",
+        "http://www.wrongmove.co/",
         "<all_urls>"
     ],
 
@@ -17,11 +16,6 @@
             "matches": ["http://www.rightmove.co.uk/*"],
             "css": ["css/rightmove.css"],
             "js": ["js/jquery.js", "js/rightmove.js"]
-        },
-        {
-            "matches": ["http://www.zoopla.co.uk/*"],
-            "css": ["css/zoopla.css"],
-            "js": ["js/jquery.js", "js/zoopla.js"]
         }
     ],
 
