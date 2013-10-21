@@ -13,7 +13,7 @@
     <file path="/rightmove.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377778731633" ignored="false" />
     <file path="/background.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1377776757192" ignored="false" />
     <file path="/popup.coffee" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375652629970" ignored="false" />
-    <file path="/manifest.json" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1375647814856" ignored="false" />
+    <file path="/manifest.json" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1382367971933" ignored="false" />
     <file path="/listing.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378899094017" ignored="false" />
     <file path="/listings_controller.rb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378376791313" ignored="false" />
     <file path="/index.html.erb" changelist="2d22ee75-352b-4d43-98b6-40b0170fc0cc" time="1378909320339" ignored="false" />
@@ -110,7 +110,17 @@
     <favorites_list name="ChromePlugin" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="manifest.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="14" selection-start="290" selection-end="290" vertical-scroll-proportion="0.47493404">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -134,8 +144,8 @@
         <option value="$PROJECT_DIR$/plugin-website/index.html" />
         <option value="$PROJECT_DIR$/plugin/js/_common.coffee" />
         <option value="$PROJECT_DIR$/plugin/css/rightmove.scss" />
-        <option value="$PROJECT_DIR$/plugin/manifest.json" />
         <option value="$PROJECT_DIR$/plugin/js/_background_api_calls.coffee" />
+        <option value="$PROJECT_DIR$/plugin/manifest.json" />
       </list>
     </option>
   </component>
@@ -207,21 +217,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChromePlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChromePlugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugin-website" />
+              <option name="myItemId" value="plugin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,8 +240,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/plugin" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/plugin-website" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
@@ -703,7 +699,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="286" y="22" width="1154" height="821" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -715,7 +711,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.33701658" sideWeight="0.22197802" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Mongo Runner" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40877914" sideWeight="0.778022" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40877914" sideWeight="0.778022" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -871,13 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugin/gone.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="26" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugin-website/gone.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="57" selection-start="219" selection-end="219" vertical-scroll-proportion="0.13081396">
@@ -924,7 +913,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plugin/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="16" selection-start="198" selection-end="214" vertical-scroll-proportion="0.35620052">
+        <state line="12" column="14" selection-start="290" selection-end="290" vertical-scroll-proportion="0.47493404">
           <folding />
         </state>
       </provider>

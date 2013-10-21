@@ -3,7 +3,8 @@
 
     "name": "Wrongmove",
     "description": "Rightmove on steroids",
-    "version": "1.0",
+    "version": "1.0.1",
+    "icons": { "128": "chrome_icon.png" },
 
     "permissions": [
         "http://www.rightmove.co.uk/",
