@@ -29,6 +29,7 @@
 
 .plugin-wrapper-listing {
   position: absolute;
+  pointer-events: none;
 
   top: 0px;
   left: 0px;
@@ -60,6 +61,7 @@
 
   .plugin-unavailable {
     position: absolute;
+    pointer-events: none;
     top: 54px;
 
     span {
